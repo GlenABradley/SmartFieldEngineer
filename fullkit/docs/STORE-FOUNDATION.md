@@ -39,7 +39,7 @@ Together **41 application foundation tests + 15 workbench + 8 inventory = 64 pas
 
 A development wheel was built, installed with a hash-verified locked subset of schema dependencies into a disposable fresh venv, and exercised with isolated Python from outside the source tree. It provisioned/opened two actual stores using installed migration resources and ran real select/create/list/operation receipt/replay through the codec. This verifies foundation/parser/first-command packaging only, not Qt/QProcess, installer or Windows runtime qualification. Evidence: reports/Environment-Validation.json, store-foundation-tests.log, Store-Foundation-Installed-Wheel.json and store-foundation-wheel-build.log (local generated reports).
 
-S04.1 F1/F3/F4 is implemented; stop here for Glen-mediated diff review. S05 real integration driver/QProcess transport remains a separate block. No success stubs or acceptance skips were introduced.
+S04.1 F1/F3/F4 was reviewed by Grok via Glen and merged to main in fca57c1. The next proposed block is [S05 transport, journal and real test driver](../../handoff/NEXT-CODE-BLOCK.md); generation awaits a later instruction on a fresh branch from current main. No success stubs or acceptance skips were introduced.
 
 ## Current raw application surface
 

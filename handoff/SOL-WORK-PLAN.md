@@ -1,5 +1,9 @@
 # Sol — current goals and task register
 
+> [!IMPORTANT]
+> Current status — 2026-09-18: S04.1 is implemented in a94e3a7, Grok-reviewed through Glen, and merged to main in fca57c1. [S05 transport/journal/test-driver plan](NEXT-CODE-BLOCK.md) is next, **not implemented or authorized for generation in this documentation session**. Start its later execution on a fresh branch from then-current main. The numbered queue below is historical where it differs: S05 includes journal/process-loss/>50-intent proof; S06 serial; S07 evidence; S08 documents/interruption/office/job.update+C1/C2; S09 backup/restore/import; S10 minimal Qt shell; release qualification is separate. C1/C2 remain adopted but unimplemented.
+
+
 Updated 2026-09-18 at Glen’s request after switching this existing session from Astra to Sol. This is the current execution plan; Astra’s handoff and the reviewed contract remain preserved. No new agent task or external message was created.
 
 ## Context accepted

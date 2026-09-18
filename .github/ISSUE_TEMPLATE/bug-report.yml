@@ -1,0 +1,79 @@
+name: Bug report
+description: Report reproducible incorrect behavior in implemented code or tooling.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Smart Field Engineer. Please do not include customer records, credentials, private paths, or other sensitive data.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Home/store foundation
+        - RPC and command boundary
+        - Contract or schema tooling
+        - Bootstrap or development environment
+        - Documentation or repository tooling
+        - Planned/unimplemented product behavior
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened, and why does it appear incorrect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Use disposable data and include the smallest sequence that reproduces the issue.
+      placeholder: |
+        1. Run …
+        2. Select …
+        3. Observe …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Revision
+      description: Commit SHA or branch name.
+      placeholder: c4bda075…
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows 11 x64
+        - macOS Apple Silicon
+        - Linux (unsupported development host)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Add relevant test output or screenshots after removing private data and filesystem paths.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Reporter checks
+      options:
+        - label: I identified whether this concerns implemented behavior, incorrect documentation, or a planned capability.
+          required: true
+        - label: I removed customer data, secrets, credentials, and private paths from this report.
+          required: true
