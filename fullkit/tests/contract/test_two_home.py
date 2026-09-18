@@ -165,9 +165,8 @@ def test_serial_correction_dispute_and_immutable_pin(app):
 
 def test_import_plan_cannot_cross_home_and_same_corpus_replays(app,tmp_path):
  import sqlite3,sys
- contract=Path(__file__).resolve().parents[1]
- # In a copied implementation test directory, driver supplies contract package path by layout.
- if not (contract/'tools/legacy_inventory.py').exists():contract=Path.cwd()/'contract'
+ contract=next(parent/'contract' for parent in Path(__file__).resolve().parents
+               if (parent/'contract/tools/legacy_inventory.py').is_file())
  sys.path.insert(0,str(contract/'tools'))
  from legacy_inventory import inventory
  a,b=ok(app,'home.list',{})['homes']

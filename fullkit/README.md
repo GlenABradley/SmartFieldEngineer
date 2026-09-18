@@ -6,4 +6,4 @@ This implementation directory currently contains the reviewed contract, build co
 
 Local environment: `.venv/bin/python` on this Mac. Run `../scripts/check_environment.py` with it to check the toolchain and contract without changing the baseline artifact. See `../reports/Environment-Validation.json` for actual results.
 
-The Windows target remains a separately qualified production environment. Git metadata lives one directory above, alongside the handoff and team files. No remote is configured; publishing or sending reviewer messages is not part of this setup.
+The Windows target remains a separately qualified production environment. Git metadata lives one directory above, alongside the handoff and team files. Glen manages the GitHub mirror; setup and local checks do not push or send reviewer messages.

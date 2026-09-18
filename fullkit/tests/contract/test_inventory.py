@@ -2,8 +2,8 @@
 import hashlib,json,sqlite3,sys
 from pathlib import Path
 import pytest
-ROOT=Path(__file__).resolve().parents[1]
-if not (ROOT/'tools/legacy_inventory.py').exists():ROOT=Path.cwd()/'contract'
+ROOT=next(parent/'contract' for parent in Path(__file__).resolve().parents
+          if (parent/'contract/tools/legacy_inventory.py').is_file())
 sys.path.insert(0,str(ROOT/'tools'))
 from legacy_inventory import inventory
 

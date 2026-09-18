@@ -19,3 +19,12 @@ Append date, agent, scope, files changed, actual commands/tests and results, unr
 - Added host/runtime/data ignore rules, snapshot-preserving line-ending attributes, hashed portable bootstrap and clean-clone instructions.
 - Preserved original release files; the portable checker explicitly excludes only mutable Finder metadata from the original manifest.
 - Clean mirror verification is recorded in reports/Git-Mirroring-Validation.json; application and Windows qualification status remain unchanged.
+
+## 2026-09-18 — Second repository pass
+
+- Added a GitHub-facing entry README without changing reviewed root snapshots.
+- Scoped default pytest discovery to current tests; fixed working acceptance-test path discovery without changing domain assertions.
+- Hardened environment failure classification and venv relocation checks; added workspace regression tests and contribution guidance.
+- Fresh-checkout bootstrap and local results are in reports/Second-Pass-Validation.json. No remote writes or contract-scope adoption performed.
+
+Second-pass verification completed: 15 workspace + 8 inventory tests passed; 479 positive / 503 negative schema specimens passed; 42 substantive baseline hashes matched. Fresh temporary checkout/bootstrap succeeded with its own pinned runtime on this Mac; real Git index preserved. Root collection excludes archived tests and still exposes the missing application driver. Disposable installation removed after retaining local evidence. No commit or push.

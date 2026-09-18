@@ -24,6 +24,8 @@ The root `README.md`, `Validation.md` and `Full-Kit-1.00.1-build-artifact.zip` w
 
 Git mirrors this outer folder, including team/handoff/reference files. See [Git mirroring](GIT-MIRRORING.md) for clean-clone bootstrap and ignored local files. The initial empty nested Git metadata was moved here; no commit or remote was created.
 
+The repository front page is now `.github/README.md`; the root package snapshot stays unchanged. See [second-pass corrections](handoff/SECOND-PASS-REVIEW.md) and [contribution guidance](CONTRIBUTING.md) for test discovery and portable setup details.
+
 ## Use the environment
 
 From a terminal, enter the **fullkit** folder beneath this one. The local `.venv` is for development on this Mac; Windows commissioning remains a separate required phase.
