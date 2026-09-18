@@ -1,0 +1,12 @@
+Claude — received September 18, 2026
+
+1. Approval invalidation has no defined mid-task behavior: add interrupted-job state, secure what is open, log reversible/irreversible exposure and hold pending reapproval.
+2. No explicit offline standing-authority path: define allowed local execution versus deferred external actions and reconnect rules.
+3. Voice consent capture: recording needs an explicit consent gate and jurisdiction-aware legal review before activation.
+4. Replacement lineage: link old and new asset IDs for service/warranty history and both-direction recall.
+5. Sponsor concurrency decision: defer migration now but flag the database capacity decision before multiple-technician operation.
+
+Preserve buyer/Home/role separation, evidence and approval tracks, no invented outcomes, and prototype honesty.
+Next experiment: target Windows identity workflow with an offline segment and mock mid-task scope change.
+
+This file is a faithful summary, not a verbatim transcript; the full user message remains the original source.

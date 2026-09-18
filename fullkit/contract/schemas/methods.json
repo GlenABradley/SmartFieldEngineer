@@ -1,0 +1,102 @@
+{
+  "home.list": {
+    "request": "request_home.list",
+    "result": "result_home.list",
+    "response": "response_home.list"
+  },
+  "session.select_home": {
+    "request": "request_session.select_home",
+    "result": "result_session.select_home",
+    "response": "response_session.select_home"
+  },
+  "job.list": {
+    "request": "request_job.list",
+    "result": "result_job.list",
+    "response": "response_job.list"
+  },
+  "job.get": {
+    "request": "request_job.get",
+    "result": "result_job.get",
+    "response": "response_job.get"
+  },
+  "serial.recall": {
+    "request": "request_serial.recall",
+    "result": "result_serial.recall",
+    "response": "response_serial.recall"
+  },
+  "operation.get": {
+    "request": "request_operation.get",
+    "result": "result_operation.get",
+    "response": "response_operation.get"
+  },
+  "system.status": {
+    "request": "request_system.status",
+    "result": "result_system.status",
+    "response": "response_system.status"
+  },
+  "job.create": {
+    "request": "request_job.create",
+    "result": "result_job.create",
+    "response": "response_job.create"
+  },
+  "job.update": {
+    "request": "request_job.update",
+    "result": "result_job.update",
+    "response": "response_job.update"
+  },
+  "record.add": {
+    "request": "request_record.add",
+    "result": "result_record.add",
+    "response": "response_record.add"
+  },
+  "evidence.attach": {
+    "request": "request_evidence.attach",
+    "result": "result_evidence.attach",
+    "response": "response_evidence.attach"
+  },
+  "serial.observe": {
+    "request": "request_serial.observe",
+    "result": "result_serial.observe",
+    "response": "response_serial.observe"
+  },
+  "serial.assign": {
+    "request": "request_serial.assign",
+    "result": "result_serial.assign",
+    "response": "response_serial.assign"
+  },
+  "serial.verify": {
+    "request": "request_serial.verify",
+    "result": "result_serial.verify",
+    "response": "response_serial.verify"
+  },
+  "serial.dispute": {
+    "request": "request_serial.dispute",
+    "result": "result_serial.dispute",
+    "response": "response_serial.dispute"
+  },
+  "document.prepare": {
+    "request": "request_document.prepare",
+    "result": "result_document.prepare",
+    "response": "response_document.prepare"
+  },
+  "interruption.record": {
+    "request": "request_interruption.record",
+    "result": "result_interruption.record",
+    "response": "response_interruption.record"
+  },
+  "envelope.put": {
+    "request": "request_envelope.put",
+    "result": "result_envelope.put",
+    "response": "response_envelope.put"
+  },
+  "backup.create": {
+    "request": "request_backup.create",
+    "result": "result_backup.create",
+    "response": "response_backup.create"
+  },
+  "backup.restore": {
+    "request": "request_backup.restore",
+    "result": "result_backup.restore",
+    "response": "response_backup.restore"
+  }
+}

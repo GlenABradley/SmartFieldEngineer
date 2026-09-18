@@ -1,0 +1,13 @@
+{
+  "sources_unchanged": true,
+  "schema_regeneration_identical": true,
+  "python_syntax": "passed",
+  "inventory_tests": 8,
+  "integration_vectors": 5,
+  "integration_transports": 2,
+  "integration_exit_code": 2,
+  "integration_status": "not implemented; visible collection failure",
+  "dependency_locked_distributions": 31,
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "harmony_addendum_words": 239
+}

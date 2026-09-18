@@ -1,0 +1,56 @@
+# Host-only runtimes, virtual environments and installer receipts
+/environment/bootstrap/
+/environment/runtimes/
+/environment/cache/
+/environment/local-install-report.json
+/environment/runtime.json
+/environment/installed.freeze.txt
+**/.venv/
+**/venv/
+
+# Derived verification output; original provenance is explicitly retained
+/reports/*
+!/reports/Source-Copy-Register.json
+!/reports/Metadata-Reconciliation.json
+
+# Python/build/editor/OS artifacts
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/
+**/.mypy_cache/
+*.py[cod]
+*.egg-info/
+/fullkit/build/
+/fullkit/dist/*
+!/fullkit/dist/.gitkeep
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local configuration, credentials and operational data
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+/private-data/
+/owner-root/
+/fullkit/private-data/
+/fullkit/owner-root/
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+*.db
+
+# Local export scratch
+/.mirror-check/

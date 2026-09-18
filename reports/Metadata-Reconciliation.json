@@ -1,0 +1,7 @@
+{
+  "file": "fullkit/contract/.DS_Store",
+  "finding": "Finder metadata in live source folder had changed since immutable ZIP was produced",
+  "action": "restored exact archived bytes; no source spec/schema/code modified",
+  "sha256": "1fb0f5f35cef5aa5e1eb6d481a9ac674cb301607d25554495dba6764c59e49a1",
+  "source": "Full-Kit-1.00.1-build-artifact.zip"
+}

@@ -1,0 +1,377 @@
+{
+  "existing_root_files_preserved": {
+    "Validation.md": "94b4f466323320048b57178359fec1eea256c3e4c7c36493f7e4cf8e8aef9d2a",
+    "README.md": "216d8039c8b7e1338238b452cd862405ae7b1976ca982bbcbc51d02631d07d8a",
+    "Full-Kit-1.00.1-build-artifact.zip": "b9aa57fc78f1b387eb6d90b0876b253b5289d451ddf754d6f35482c0575d6249"
+  },
+  "copies": [
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/Addendum-1.00.1.md",
+      "destination": "fullkit/contract/Addendum-1.00.1.md",
+      "sha256": "59c6611c37a6b6b01095e55ba251430bacb99be8a4a3fda121f378e252ec42ba",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/requirements-windows.lock",
+      "destination": "fullkit/contract/requirements-windows.lock",
+      "sha256": "e032369710455d0bc4bd35595328e3edd5fdaa6b516c100db1c15c415d2c7df6",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/.DS_Store",
+      "destination": "fullkit/contract/.DS_Store",
+      "sha256": "cc82bef7121258293ea2d424c5c93ecaf68c2fef9e8370ecaf8c866f5c0f2645",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/Validation.md",
+      "destination": "fullkit/contract/Validation.md",
+      "sha256": "94b4f466323320048b57178359fec1eea256c3e4c7c36493f7e4cf8e8aef9d2a",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/requirements-application.txt",
+      "destination": "fullkit/contract/requirements-application.txt",
+      "sha256": "268fa0b6bf62e0933e4f222ef2fb9073c14cfc1c0aedae6c1ac84e6a69d51ef6",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/README.md",
+      "destination": "fullkit/contract/README.md",
+      "sha256": "216d8039c8b7e1338238b452cd862405ae7b1976ca982bbcbc51d02631d07d8a",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/requirements-build.txt",
+      "destination": "fullkit/contract/requirements-build.txt",
+      "sha256": "0b7f71ef4cad5071c64440b18879b6865b35ffd766d45aea1a08d6dc8a951ac4",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/validation-artifact.json",
+      "destination": "fullkit/contract/validation-artifact.json",
+      "sha256": "a252019e605de6a2b2365a13c3c7a1fd85ea450e0d34e3d9a7b590e12de39173",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/Manifest.json",
+      "destination": "fullkit/contract/Manifest.json",
+      "sha256": "8a09de6b6d77402e9690402cb3f1f6362fcbd4759c07e6028f1f5deae43ba96b",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/validation-schema.json",
+      "destination": "fullkit/contract/validation-schema.json",
+      "sha256": "ef836aeb64830f25f8e3c551c8bcc7e122c8ddcc4d748b1194a335460d736429",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/pyproject-template.toml",
+      "destination": "fullkit/contract/pyproject-template.toml",
+      "sha256": "d2cecd87e8cd6ef115c3e7e3434f531f8981af4cfa22c5b59fc3a5a94074166b",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/requirements-validation.txt",
+      "destination": "fullkit/contract/requirements-validation.txt",
+      "sha256": "0107e292c41fcd2025249401408540ecd0fb0d3e90e7425695f3c9f97f9ab0af",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tools/verify_dependencies.py",
+      "destination": "fullkit/contract/tools/verify_dependencies.py",
+      "sha256": "fc4400c1a48f4153ba5ca7d69d5592988a2c74cee26add656f82a31ef69f4992",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tools/validate_contract.py",
+      "destination": "fullkit/contract/tools/validate_contract.py",
+      "sha256": "8d25515794dc0b977a3990da9e0dae532f41b3b84f5666b60e7f957e43b5a9af",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tools/legacy_inventory.py",
+      "destination": "fullkit/contract/tools/legacy_inventory.py",
+      "sha256": "8f6d943c289fbf80ef4c26ee844b4c46ab676d708ae2e5e4e674e916d057f97f",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tools/generate_contract.py",
+      "destination": "fullkit/contract/tools/generate_contract.py",
+      "sha256": "e1ce5158affd2e0f62a0003e75991e269b82993dc5bd819d3697d6fc794e9a1b",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tools/runtime_check.py",
+      "destination": "fullkit/contract/tools/runtime_check.py",
+      "sha256": "bab7dc4d8aac163f63dec6e5ab3358bbb158bb3191766a3d6d1b1f1d11b7f25c",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tools/verify_manifest.py",
+      "destination": "fullkit/contract/tools/verify_manifest.py",
+      "sha256": "fb672794dadc2ff73c050d2b048f0fac33b70e6872ad68d57f54c82e1f1b5fa3",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tools/generate_examples.py",
+      "destination": "fullkit/contract/tools/generate_examples.py",
+      "sha256": "0dd22b5c83920353559ee4543698079ceb581b2a710f8c641f054290348ec022",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tests/test_two_home.py",
+      "destination": "fullkit/contract/tests/test_two_home.py",
+      "sha256": "a6ead90aeb656ac375afc035d62ea6c594fc448d03183510321ae2d36800f656",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tests/.DS_Store",
+      "destination": "fullkit/contract/tests/.DS_Store",
+      "sha256": "c875d7786c4ac516c286d5163b7c1386dba1cd96d0f2a98f33034a00eab73e78",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tests/test_inventory.py",
+      "destination": "fullkit/contract/tests/test_inventory.py",
+      "sha256": "e597a5edd7613139e9cc816d62f7ddf41e75026124cf0945b442283e4c0e043f",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/schemas/command.schema.json",
+      "destination": "fullkit/contract/schemas/command.schema.json",
+      "sha256": "a2f664f67c10e2b111178e3746ac9ef13b0502be6ae66c19cdc18a04f9c7d021",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/schemas/receipt.schema.json",
+      "destination": "fullkit/contract/schemas/receipt.schema.json",
+      "sha256": "4609cf5897b14cfebcf377d1cb691b01363f0acfbbf619d05607f2fbada9cefe",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/schemas/request.schema.json",
+      "destination": "fullkit/contract/schemas/request.schema.json",
+      "sha256": "d1d1ae007255ed2353f38462fdeff3e4e7cdc06386d340cfdb2b9b8d68f317f2",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/schemas/methods.json",
+      "destination": "fullkit/contract/schemas/methods.json",
+      "sha256": "6fa9bcee7473aae30f548e6fdd961501b9b58942b1b6eb0782282350fdfd115a",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/schemas/identity_fact.schema.json",
+      "destination": "fullkit/contract/schemas/identity_fact.schema.json",
+      "sha256": "e76527b215be1a152484688466ab074655e953848c82b07f0e563681ae2a4a4e",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/schemas/maintenance_report.schema.json",
+      "destination": "fullkit/contract/schemas/maintenance_report.schema.json",
+      "sha256": "cc8ab939fa86768ae1f461d3a073c4bccff9a0e3f4b6e0e583102b08f89f2694",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/schemas/evidence.schema.json",
+      "destination": "fullkit/contract/schemas/evidence.schema.json",
+      "sha256": "830d582464fa997d9f57d6950eefdec53d29b1629fc0d14fd27edb8b0f4fc807",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/schemas/response.schema.json",
+      "destination": "fullkit/contract/schemas/response.schema.json",
+      "sha256": "ae78a90e3841193f7d9d6794ee8c42ee6a93b2a8010d5d1395f1d6d62aac6d32",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/schemas/contract.json",
+      "destination": "fullkit/contract/schemas/contract.json",
+      "sha256": "1481d2fd36a9138ba6ff7ea6f1dc469306b5ece6fb40ca182d1989a57f970a78",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/examples/specimens.json",
+      "destination": "fullkit/contract/examples/specimens.json",
+      "sha256": "f735486480d278b6ca32dafeee369c305de34640488ad4bc5edcb5c552914008",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/windows-resolution.json",
+      "destination": "fullkit/contract/reference/windows-resolution.json",
+      "sha256": "b35aaf192faa42eec3f5b949c0d7ac6ca73c3e1d735e5e7a3c8ea3dc60b5d445",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/legacy-source-inventory.json",
+      "destination": "fullkit/contract/reference/legacy-source-inventory.json",
+      "sha256": "0a4b484f577c64017cf63a522de6e8347a7b4515c323025674747a3888e3e41e",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/dependency-verification.json",
+      "destination": "fullkit/contract/reference/dependency-verification.json",
+      "sha256": "adf17452634475f4b7a19a97f75fe32ddfe769e95c14a6c1c1377d07b14d95b9",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/validation-environment.freeze.txt",
+      "destination": "fullkit/contract/reference/validation-environment.freeze.txt",
+      "sha256": "70c23142bae4f7a65e452f68fec2b20928d76649b213817418355b3f7105aaf5",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/integration-not-implemented.log",
+      "destination": "fullkit/contract/reference/integration-not-implemented.log",
+      "sha256": "1bcf655959302cbcd0be751c52be89a1d554dfc1e2bbc7a8f1dc384a10d9f579",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/Full-Kit-Slice-1-Build-Spec-100.md",
+      "destination": "fullkit/contract/reference/Full-Kit-Slice-1-Build-Spec-100.md",
+      "sha256": "e6cf5c66840c90810d9f1f8de2e7e37e267b9c0c06658b3d8a5274a337cfdf18",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/dependency-resolution.log",
+      "destination": "fullkit/contract/reference/dependency-resolution.log",
+      "sha256": "3548760181acf6738c2893321c86383accf02ce5b21fcffa23542e1a71272f31",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/legacy-ddl.sql",
+      "destination": "fullkit/contract/reference/legacy-ddl.sql",
+      "sha256": "b087af75b026696fd3556bf5155b48035abdac6adc72e167884474e097016665",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/inventory-tests.xml",
+      "destination": "fullkit/contract/reference/inventory-tests.xml",
+      "sha256": "a41130ad976d8f35b53164c32baf1db9ed1a859863e61b9da3c7235ab67c2aaa",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/source-provenance.json",
+      "destination": "fullkit/contract/reference/source-provenance.json",
+      "sha256": "7ee072aba32a82cc26d5fad2f9cbc2f01021027b54724530706cf7fd834264d1",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/legacy-fieldoffice-0.2.0.py.txt",
+      "destination": "fullkit/contract/reference/legacy-fieldoffice-0.2.0.py.txt",
+      "sha256": "90fc26a8f1f8a712b2783462178e5fa3d3971ca459067327474fab608f27a62f",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/reference/Spec-100-Delta-and-Adjudication.md",
+      "destination": "fullkit/contract/reference/Spec-100-Delta-and-Adjudication.md",
+      "sha256": "8efaf5e50a6187a647cf49e0d731d5e0e6b36adc92c4b3fb3ceb6bd99c0fb81a",
+      "classification": "current-1.00.1-contract"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/pyproject-template.toml",
+      "destination": "fullkit/pyproject.toml",
+      "sha256": "d2cecd87e8cd6ef115c3e7e3434f531f8981af4cfa22c5b59fc3a5a94074166b",
+      "classification": "initial-build-configuration"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tests/test_inventory.py",
+      "destination": "fullkit/tests/contract/test_inventory.py",
+      "sha256": "e597a5edd7613139e9cc816d62f7ddf41e75026124cf0945b442283e4c0e043f",
+      "classification": "implementation-acceptance-test"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-1.00.1-build-artifact/tests/test_two_home.py",
+      "destination": "fullkit/tests/contract/test_two_home.py",
+      "sha256": "a6ead90aeb656ac375afc035d62ea6c594fc448d03183510321ae2d36800f656",
+      "classification": "implementation-acceptance-test"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/deliverables/Network-Engineer-Copilot-Review-1.4-App-0.2.0.zip",
+      "destination": "references/legacy/0.2.0/Network-Engineer-Copilot-Review-1.4-App-0.2.0.zip",
+      "sha256": "2dc2ef2cdce765ad64761309efbec67f2b5de7cdf1ae653f06a93031f7c7acb5",
+      "classification": "legacy-import-source-not-new-app"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/output/canon.md",
+      "destination": "references/canons/Operational-Canon.md",
+      "sha256": "1b770d7cf22988f5259b90ef8c9aa50161d5f61df170cfd8e9a0991ce8f28ea2",
+      "classification": "product-context-not-slice-wire-authority"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/output/Network Engineer Copilot Operational Canon.docx",
+      "destination": "references/canons/Operational-Canon.docx",
+      "sha256": "7c3f59b46ca9367da79536054ed468ef4c8d2c7d457a2c7f917bfdd6648d6284",
+      "classification": "product-context-not-slice-wire-authority"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/output/final_render/Network Engineer Copilot Operational Canon.pdf",
+      "destination": "references/canons/Operational-Canon.pdf",
+      "sha256": "474c58e462b310b3f0883e74237466951cfdd8e16d207f410e86620cbeb24698",
+      "classification": "product-context-not-slice-wire-authority"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/implementation-kit/docs/Implementation-Canon.md",
+      "destination": "references/canons/Historical-Technical-Canon.md",
+      "sha256": "4ed4ec6ba312b84ed12a71cc19ca018a2095ee1d40fdcac64cbb5aaf7ed72ec3",
+      "classification": "product-context-not-slice-wire-authority"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/implementation-kit/docs/Network Engineer Copilot Technical Implementation Canon.docx",
+      "destination": "references/canons/Historical-Technical-Canon.docx",
+      "sha256": "f224e62072debb26654d28c99b75d98d2f289db22f0c26e36df8a7605c116949",
+      "classification": "product-context-not-slice-wire-authority"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/review-integration/Adjudication-and-Integrated-Contracts.md",
+      "destination": "references/reviews/Adjudication-and-Integrated-Contracts.md",
+      "sha256": "9c011cc4a11a624789eb22d3e90f2dae29909034b5df7ea18eeb43968b2225d7",
+      "classification": "historical-review-input-not-instructions"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/review-integration/Received-Claude.txt",
+      "destination": "references/reviews/Received-Claude.txt",
+      "sha256": "0fe3ceea35c44d231e94b61de0d7da025a692ba1fcafd1cce5e135bbea370591",
+      "classification": "historical-review-input-not-instructions"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/review-integration/Durability-Inspection-and-Process-Recovery.json",
+      "destination": "references/reviews/Durability-Inspection-and-Process-Recovery.json",
+      "sha256": "d65843fd3c06c113941d0ab3c518ff7a65896eccec9b57bfaec4441e82e065c1",
+      "classification": "historical-review-input-not-instructions"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/review-integration/Review-Integration-Register.csv",
+      "destination": "references/reviews/Review-Integration-Register.csv",
+      "sha256": "4e16182e3f3d5e924e6feefd34ef3d6d2c6f4fb15f0f3a4e1928772545288868",
+      "classification": "historical-review-input-not-instructions"
+    },
+    {
+      "source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/review-integration/Received-Gemini-DeepSeek-Perplexity.txt",
+      "destination": "references/reviews/Received-Gemini-DeepSeek-Perplexity.txt",
+      "sha256": "e6240ccd6c429617b5634755844181db9294adcd041bc0f0b60abf8d00f21085",
+      "classification": "historical-review-input-not-instructions"
+    },
+    {
+      "source": "/Users/glen/Downloads/SLICE1-099-ADVERSARIAL-GROK-FIRST-WORD.md",
+      "destination": "references/reviews/SLICE1-099-ADVERSARIAL-GROK-FIRST-WORD.md",
+      "sha256": "56287f4146aae030182accb788641a973e5f17f1b93a18358cd433c4a19ff247",
+      "classification": "spec-099-review-adjudicated-in-100"
+    },
+    {
+      "source": "/Users/glen/.codex/attachments/cee957e1-27ff-4423-a079-5f8a10b10285/pasted-text.txt",
+      "destination": "references/reviews/Claude-Spec-099-Adversarial-Pass.txt",
+      "sha256": "91ca62f7ad4319fe1f8ae9d30f97bb82475fb1f3c4b96fec207371e700563482",
+      "classification": "spec-099-review-adjudicated-in-100"
+    },
+    {
+      "source": "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-Slice-1-Build-Spec-099.md",
+      "destination": "references/history/Full-Kit-Slice-1-Build-Spec-099.md",
+      "sha256": "b4106a1ba944d8d537b04ce5326e1ff2218eb7b71fb19a1d4a2c6bfa6b0d8ffc",
+      "classification": "superseded-spec"
+    }
+  ],
+  "legacy_extraction_source": "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/deliverables/Network-Engineer-Copilot-Review-1.4-App-0.2.0.zip",
+  "existing_zip_matches_release": true
+}

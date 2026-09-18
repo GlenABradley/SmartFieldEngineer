@@ -1,0 +1,10 @@
+{
+  "revision": "1.4",
+  "application_version": "0.2.0",
+  "date": "2026-09-18",
+  "status": "focused_meaning_patch_and_local_identity_increment",
+  "base_canons": {
+    "output/canon.md": "1b770d7cf22988f5259b90ef8c9aa50161d5f61df170cfd8e9a0991ce8f28ea2",
+    "implementation-kit/docs/Implementation-Canon.md": "4ed4ec6ba312b84ed12a71cc19ca018a2095ee1d40fdcac64cbb5aaf7ed72ec3"
+  }
+}

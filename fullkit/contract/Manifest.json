@@ -1,0 +1,315 @@
+{
+  "artifact": "Full Kit Composed Slice 1 build contract",
+  "artifact_version": "1.00.1",
+  "package_revision": 1,
+  "wire_profile": "cmd.v0.addendum-r4",
+  "schema_draft": "2020-12",
+  "status": "review-ready build artifact; application absent; proposed C1/C2 pending adjudication",
+  "sources": {
+    "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/implementation-kit/fieldoffice.py": "90fc26a8f1f8a712b2783462178e5fa3d3971ca459067327474fab608f27a62f",
+    "/Users/glen/Documents/Grok-GPT Sandbox/Full-Kit-Slice-1-Build-Spec-100.md": "e6cf5c66840c90810d9f1f8de2e7e37e267b9c0c06658b3d8a5274a337cfdf18",
+    "/Users/glen/Documents/Grok-GPT Sandbox/Spec-100-Delta-and-Adjudication.md": "8efaf5e50a6187a647cf49e0d731d5e0e6b36adc92c4b3fb3ceb6bd99c0fb81a",
+    "/Users/glen/.codex/.chatgpt-projects/g-p-6a97d9511e408191a110a9dc9b32de0b/deliverables/Network-Engineer-Copilot-Review-1.4-App-0.2.0.zip": "2dc2ef2cdce765ad64761309efbec67f2b5de7cdf1ae653f06a93031f7c7acb5"
+  },
+  "generated_by": [
+    "tools/generate_contract.py",
+    "tools/generate_examples.py",
+    "tools/verify_dependencies.py"
+  ],
+  "validation": {
+    "schemas": {
+      "status": "passed",
+      "schema_files": 8,
+      "definitions": 212,
+      "public_methods": 20,
+      "positive": 479,
+      "negative": 503,
+      "format_checks": [
+        "uuid",
+        "offset-aware date-time"
+      ],
+      "resolution": "local only",
+      "python": "3.12.14",
+      "sqlite": "3.53.1",
+      "jsonschema": "4.26.0",
+      "errors": []
+    },
+    "artifact": {
+      "sources_unchanged": true,
+      "schema_regeneration_identical": true,
+      "python_syntax": "passed",
+      "inventory_tests": 8,
+      "integration_vectors": 5,
+      "integration_transports": 2,
+      "integration_exit_code": 2,
+      "integration_status": "not implemented; visible collection failure",
+      "dependency_locked_distributions": 31,
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "harmony_addendum_words": 239
+    }
+  },
+  "review_proposals": [
+    "C1: explicit sourced resume event represents owner decision",
+    "C2: append effective-scope linkage for unresolved holds on scope advancement"
+  ],
+  "files": {
+    ".DS_Store": {
+      "sha256": "1fb0f5f35cef5aa5e1eb6d481a9ac674cb301607d25554495dba6764c59e49a1",
+      "bytes": 6148,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "Addendum-1.00.1.md": {
+      "sha256": "59c6611c37a6b6b01095e55ba251430bacb99be8a4a3fda121f378e252ec42ba",
+      "bytes": 1708,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "README.md": {
+      "sha256": "216d8039c8b7e1338238b452cd862405ae7b1976ca982bbcbc51d02631d07d8a",
+      "bytes": 51724,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "Validation.md": {
+      "sha256": "94b4f466323320048b57178359fec1eea256c3e4c7c36493f7e4cf8e8aef9d2a",
+      "bytes": 5853,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "examples/specimens.json": {
+      "sha256": "f735486480d278b6ca32dafeee369c305de34640488ad4bc5edcb5c552914008",
+      "bytes": 731716,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "pyproject-template.toml": {
+      "sha256": "d2cecd87e8cd6ef115c3e7e3434f531f8981af4cfa22c5b59fc3a5a94074166b",
+      "bytes": 760,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/Full-Kit-Slice-1-Build-Spec-100.md": {
+      "sha256": "e6cf5c66840c90810d9f1f8de2e7e37e267b9c0c06658b3d8a5274a337cfdf18",
+      "bytes": 35633,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/Spec-100-Delta-and-Adjudication.md": {
+      "sha256": "8efaf5e50a6187a647cf49e0d731d5e0e6b36adc92c4b3fb3ceb6bd99c0fb81a",
+      "bytes": 4186,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/dependency-resolution.log": {
+      "sha256": "3548760181acf6738c2893321c86383accf02ce5b21fcffa23542e1a71272f31",
+      "bytes": 10121,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/dependency-verification.json": {
+      "sha256": "adf17452634475f4b7a19a97f75fe32ddfe769e95c14a6c1c1377d07b14d95b9",
+      "bytes": 8863,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/integration-not-implemented.log": {
+      "sha256": "1bcf655959302cbcd0be751c52be89a1d554dfc1e2bbc7a8f1dc384a10d9f579",
+      "bytes": 1142,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/inventory-tests.xml": {
+      "sha256": "a41130ad976d8f35b53164c32baf1db9ed1a859863e61b9da3c7235ab67c2aaa",
+      "bytes": 1597,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/legacy-ddl.sql": {
+      "sha256": "b087af75b026696fd3556bf5155b48035abdac6adc72e167884474e097016665",
+      "bytes": 2924,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/legacy-fieldoffice-0.2.0.py.txt": {
+      "sha256": "90fc26a8f1f8a712b2783462178e5fa3d3971ca459067327474fab608f27a62f",
+      "bytes": 39941,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/legacy-source-inventory.json": {
+      "sha256": "0a4b484f577c64017cf63a522de6e8347a7b4515c323025674747a3888e3e41e",
+      "bytes": 9629,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/source-provenance.json": {
+      "sha256": "7ee072aba32a82cc26d5fad2f9cbc2f01021027b54724530706cf7fd834264d1",
+      "bytes": 687,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/validation-environment.freeze.txt": {
+      "sha256": "70c23142bae4f7a65e452f68fec2b20928d76649b213817418355b3f7105aaf5",
+      "bytes": 422,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "reference/windows-resolution.json": {
+      "sha256": "b35aaf192faa42eec3f5b949c0d7ac6ca73c3e1d735e5e7a3c8ea3dc60b5d445",
+      "bytes": 185140,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "requirements-application.txt": {
+      "sha256": "268fa0b6bf62e0933e4f222ef2fb9073c14cfc1c0aedae6c1ac84e6a69d51ef6",
+      "bytes": 58,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "requirements-build.txt": {
+      "sha256": "0b7f71ef4cad5071c64440b18879b6865b35ffd766d45aea1a08d6dc8a951ac4",
+      "bytes": 32,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "requirements-validation.txt": {
+      "sha256": "0107e292c41fcd2025249401408540ecd0fb0d3e90e7425695f3c9f97f9ab0af",
+      "bytes": 57,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "requirements-windows.lock": {
+      "sha256": "e032369710455d0bc4bd35595328e3edd5fdaa6b516c100db1c15c415d2c7df6",
+      "bytes": 3184,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "schemas/command.schema.json": {
+      "sha256": "a2f664f67c10e2b111178e3746ac9ef13b0502be6ae66c19cdc18a04f9c7d021",
+      "bytes": 168,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "schemas/contract.json": {
+      "sha256": "1481d2fd36a9138ba6ff7ea6f1dc469306b5ece6fb40ca182d1989a57f970a78",
+      "bytes": 223230,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "schemas/evidence.schema.json": {
+      "sha256": "830d582464fa997d9f57d6950eefdec53d29b1629fc0d14fd27edb8b0f4fc807",
+      "bytes": 170,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "schemas/identity_fact.schema.json": {
+      "sha256": "e76527b215be1a152484688466ab074655e953848c82b07f0e563681ae2a4a4e",
+      "bytes": 180,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "schemas/maintenance_report.schema.json": {
+      "sha256": "cc8ab939fa86768ae1f461d3a073c4bccff9a0e3f4b6e0e583102b08f89f2694",
+      "bytes": 190,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "schemas/methods.json": {
+      "sha256": "6fa9bcee7473aae30f548e6fdd961501b9b58942b1b6eb0782282350fdfd115a",
+      "bytes": 2883,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "schemas/receipt.schema.json": {
+      "sha256": "4609cf5897b14cfebcf377d1cb691b01363f0acfbbf619d05607f2fbada9cefe",
+      "bytes": 168,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "schemas/request.schema.json": {
+      "sha256": "d1d1ae007255ed2353f38462fdeff3e4e7cdc06386d340cfdb2b9b8d68f317f2",
+      "bytes": 168,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "schemas/response.schema.json": {
+      "sha256": "ae78a90e3841193f7d9d6794ee8c42ee6a93b2a8010d5d1395f1d6d62aac6d32",
+      "bytes": 170,
+      "artifact_version": "1.00.1",
+      "generated": true
+    },
+    "tests/.DS_Store": {
+      "sha256": "c875d7786c4ac516c286d5163b7c1386dba1cd96d0f2a98f33034a00eab73e78",
+      "bytes": 6148,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "tests/test_inventory.py": {
+      "sha256": "e597a5edd7613139e9cc816d62f7ddf41e75026124cf0945b442283e4c0e043f",
+      "bytes": 3782,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "tests/test_two_home.py": {
+      "sha256": "a6ead90aeb656ac375afc035d62ea6c594fc448d03183510321ae2d36800f656",
+      "bytes": 16156,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "tools/generate_contract.py": {
+      "sha256": "e1ce5158affd2e0f62a0003e75991e269b82993dc5bd819d3697d6fc794e9a1b",
+      "bytes": 17314,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "tools/generate_examples.py": {
+      "sha256": "0dd22b5c83920353559ee4543698079ceb581b2a710f8c641f054290348ec022",
+      "bytes": 4588,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "tools/legacy_inventory.py": {
+      "sha256": "8f6d943c289fbf80ef4c26ee844b4c46ab676d708ae2e5e4e674e916d057f97f",
+      "bytes": 4441,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "tools/runtime_check.py": {
+      "sha256": "bab7dc4d8aac163f63dec6e5ab3358bbb158bb3191766a3d6d1b1f1d11b7f25c",
+      "bytes": 1362,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "tools/validate_contract.py": {
+      "sha256": "8d25515794dc0b977a3990da9e0dae532f41b3b84f5666b60e7f957e43b5a9af",
+      "bytes": 2494,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "tools/verify_dependencies.py": {
+      "sha256": "fc4400c1a48f4153ba5ca7d69d5592988a2c74cee26add656f82a31ef69f4992",
+      "bytes": 1527,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "tools/verify_manifest.py": {
+      "sha256": "fb672794dadc2ff73c050d2b048f0fac33b70e6872ad68d57f54c82e1f1b5fa3",
+      "bytes": 506,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "validation-artifact.json": {
+      "sha256": "a252019e605de6a2b2365a13c3c7a1fd85ea450e0d34e3d9a7b590e12de39173",
+      "bytes": 406,
+      "artifact_version": "1.00.1",
+      "generated": false
+    },
+    "validation-schema.json": {
+      "sha256": "ef836aeb64830f25f8e3c551c8bcc7e122c8ddcc4d748b1194a335460d736429",
+      "bytes": 314,
+      "artifact_version": "1.00.1",
+      "generated": false
+    }
+  }
+}

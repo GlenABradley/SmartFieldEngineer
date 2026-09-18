@@ -1,0 +1,46 @@
+{
+  "currency": "USD", "date": "2026-09-18", "basis": "Planning allowances, not vendor quotations; used equipment condition varies",
+  "core": [
+    ["Refurbished Toughbook FZ-55 Mk1, 16 GB, 512 GB, Windows 11 Pro, charger",800],
+    ["32 GB RAM upgrade allowance",65],
+    ["OEM-compatible spare battery allowance",100],
+    ["Installed carrier-compatible WWAN option allowance",140],
+    ["External 1 TB SSD for encrypted backup",75],
+    ["USB Ethernet adapter and powered USB hub",55],
+    ["USB RS232 console kit, DB9 adapters and USB cables",50],
+    ["NOYAFA NF-8508 copper diagnostic and optical power tool",120],
+    ["Fiber cleaners, LC adapters and known-good patch leads",75],
+    ["Klein MM400-class independent multimeter",65],
+    ["Terminating, stripping, punchdown and basic hand tools",120],
+    ["Patch leads, couplers, USB storage and passive adapters",65],
+    ["Brother PT-H110-class standalone labeler and tape",55],
+    ["USB or Bluetooth headset",40],
+    ["Used compact inkjet printer, compatible power and ink allowance",180],
+    ["Padded instrument pouches and dividers",50],
+    ["Commodity duffel, removable stiff base and straps",90],
+    ["Hand cart",50],
+    ["Glasses, gloves, headlamp and ESD consumables",50],
+    ["Known-good managed 1GbE test switch and PoE injector",75]
+  ],
+  "extended": [
+    ["Hantek 6022BE USB scope and probe allowance",80],
+    ["Generic fx2lafw-compatible logic analyzer and safe-level leads",20],
+    ["Isolated RS485 USB adapter and breakout terminals",45],
+    ["tinySA Ultra+ ZS407 authentic unit and input accessories",220],
+    ["HIKMICRO Mini2 V2-class phone thermal camera",220],
+    ["Digital fiber inspection probe with LC and SC tips allowance",140],
+    ["1310 and 1550 nm stable optical light source allowance",80],
+    ["Economy IP and analog CCTV tester with specified formats allowance",180],
+    ["Coax mapper, BNC and F adapters",35],
+    ["Pinecil V2 with supply, cable, tip and stand",65],
+    ["Used analog telephone butt set rated for intended lines",60],
+    ["Additional instrument padding and leads",40]
+  ],
+  "optional": [
+    ["Veto Tech Pac new observed list price",314.99],
+    ["Norwalk messenger planning reserve, exact SKU and price unverified",180],
+    ["Custom outer carrier prototype allowance",350],
+    ["Spare used mini PC or laptop as traffic-test endpoint",100],
+    ["USB CAN adapter and isolated interface allowance",80]
+  ]
+}

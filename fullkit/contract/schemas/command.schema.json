@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fullkit.local/schemas/command.schema.json",
+  "$ref": "contract.json#/$defs/command"
+}

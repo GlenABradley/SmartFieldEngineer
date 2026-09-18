@@ -1,0 +1,10 @@
+{
+  "raw": "DEMO-SW-0001",
+  "identity_kind": "serial",
+  "method": "voice_transcript",
+  "source": "DEMO manually entered spoken note; no automatic audio recognition",
+  "captured_by": "DEMO-owner",
+  "observed_at": "2026-09-18T10:00:00-04:00",
+  "manufacturer": null,
+  "model": null
+}

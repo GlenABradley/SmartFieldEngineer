@@ -1,0 +1,519 @@
+{
+  "kit_sha256": "2dc2ef2cdce765ad64761309efbec67f2b5de7cdf1ae653f06a93031f7c7acb5",
+  "source_entry": "implementation-kit/fieldoffice.py",
+  "source_sha256": "90fc26a8f1f8a712b2783462178e5fa3d3971ca459067327474fab608f27a62f",
+  "matches_inspected_source": true,
+  "database_entries_in_kit": [],
+  "actual_customer_source_digest": null,
+  "reason": "No populated ledger supplied in this kit",
+  "table_definitions_from_actual_source": {
+    "actions": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "job",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "version",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "data",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "hash",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "expires",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "state",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 7,
+        "name": "receipt",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "asset_bindings": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "asset",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "revision",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "observation",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "data",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "asset_heads": [
+      {
+        "cid": 0,
+        "name": "asset",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "revision",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "state",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "asset_jobs": [
+      {
+        "cid": 0,
+        "name": "asset",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "job",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 2
+      }
+    ],
+    "audit": [
+      {
+        "cid": 0,
+        "name": "seq",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "at",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "event",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "data",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "previous",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "hash",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "documents": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "job",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "kind",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "data",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "hash",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "created",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "evidence": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "job",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "hash",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "name",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "data",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "jobs": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "data",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "version",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "office_meta": [
+      {
+        "cid": 0,
+        "name": "key",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "value",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "records": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "job",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "kind",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "data",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "created",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "reservations": [
+      {
+        "cid": 0,
+        "name": "job",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "start",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "end",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "state",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "review",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "serial_assignments": [
+      {
+        "cid": 0,
+        "name": "observation",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "job",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "asset",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "serial_observations": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "data",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "created",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "stock": [
+      {
+        "cid": 0,
+        "name": "sku",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "location",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 2
+      },
+      {
+        "cid": 2,
+        "name": "qty",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "unit_cents",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ]
+  }
+}

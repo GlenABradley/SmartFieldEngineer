@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Verified Asset Bind Revision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "classification",
+    "schema_version",
+    "bind_id",
+    "home_id",
+    "asset_id",
+    "revision",
+    "manufacturer",
+    "model",
+    "serial",
+    "observation",
+    "verification",
+    "supersedes_bind_id",
+    "change_reason"
+  ],
+  "properties": {
+    "classification": {
+      "const": "floor"
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "bind_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "home_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manufacturer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "serial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw",
+        "normalized",
+        "normalization_rule"
+      ],
+      "properties": {
+        "raw": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalization_rule": {
+          "const": "trim_surrounding_whitespace_only"
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "evidence_sha256",
+        "observed_at",
+        "method",
+        "captured_by",
+        "source_job_id"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "method": {
+          "enum": [
+            "label_photo",
+            "barcode_scan",
+            "device_inventory_output",
+            "manual_label_read"
+          ]
+        },
+        "captured_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_job_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "verified_by",
+        "verified_at"
+      ],
+      "properties": {
+        "status": {
+          "const": "verified"
+        },
+        "verified_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "supersedes_bind_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "change_reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "revision": {
+            "const": 1
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "supersedes_bind_id": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "supersedes_bind_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "review_round": 1,
+  "application_version": "0.2.0",
+  "application_sha256": "90fc26a8f1f8a712b2783462178e5fa3d3971ca459067327474fab608f27a62f",
+  "runtime": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "sqlite_version": "3.53.1",
+  "journal_mode": "wal",
+  "synchronous": 2,
+  "experiment": "child commits one sourced record, begins a second transaction including record and audit inserts, exits abruptly with os._exit(77), parent reopens ledger",
+  "committed_record_survived": true,
+  "uncommitted_record_and_audit_event_rolled_back": true,
+  "integrity_check": "ok",
+  "limits": "One deterministic process-termination recovery scenario on macOS; not interruption during commit, physical power loss, hardware/fsync qualification, durable evidence/document file writes, Windows, or a recovery-rate guarantee."
+}

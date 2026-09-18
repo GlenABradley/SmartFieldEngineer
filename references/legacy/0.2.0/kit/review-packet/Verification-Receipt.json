@@ -1,0 +1,15 @@
+{
+  "packet": "coherence-review-1.4-app-0.2.0",
+  "verification_date": "2026-09-18",
+  "tested_from": "fresh extraction of version-specific archive; tests imported extracted application code",
+  "runtime": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "application_version": "0.2.0",
+  "returncode": 0,
+  "test_count": 18,
+  "passed": 18,
+  "source_sha256": "90fc26a8f1f8a712b2783462178e5fa3d3971ca459067327474fab608f27a62f",
+  "serial_tests_sha256": "d59badfa6bbbb263398374149a9ad2d2aa00208799ee16d5c302549226745ef1",
+  "test_output": "test_backup_restores (test_office.OfficeTest.test_backup_restores) ... ok\ntest_documents_cents_and_html (test_office.OfficeTest.test_documents_cents_and_html) ... ok\ntest_duplicate_action_outcome (test_office.OfficeTest.test_duplicate_action_outcome) ... ok\ntest_evidence_isolation_and_closeout (test_office.OfficeTest.test_evidence_isolation_and_closeout) ... ok\ntest_expiry_and_wrong_hash (test_office.OfficeTest.test_expiry_and_wrong_hash) ... ok\ntest_export_filters_private (test_office.OfficeTest.test_export_filters_private) ... ok\ntest_hash_detects_damage (test_office.OfficeTest.test_hash_detects_damage) ... ok\ntest_inventory_transaction (test_office.OfficeTest.test_inventory_transaction) ... ok\ntest_protected_envelope (test_office.OfficeTest.test_protected_envelope) ... ok\ntest_reopen_and_resolve (test_office.OfficeTest.test_reopen_and_resolve) ... ok\ntest_revision_invalidates_approval (test_office.OfficeTest.test_revision_invalidates_approval) ... ok\ntest_timezone_required (test_office.OfficeTest.test_timezone_required) ... ok\ntest_cli_lifecycle (test_serial.SerialTest.test_cli_lifecycle) ... ok\ntest_correction_stale_writer_history_dispute (test_serial.SerialTest.test_correction_stale_writer_history_dispute) ... ok\ntest_snapshot_immutability_and_backup (test_serial.SerialTest.test_snapshot_immutability_and_backup) ... ok\ntest_unknown_and_unassigned_voice (test_serial.SerialTest.test_unknown_and_unassigned_voice) ... ok\ntest_unknown_model_label_and_job_link (test_serial.SerialTest.test_unknown_model_label_and_job_link) ... ok\ntest_wrong_job_and_damaged_evidence (test_serial.SerialTest.test_wrong_job_and_damaged_evidence) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.465s\n\nOK\n",
+  "limits": "Local Python/SQLite on macOS only; not target Windows, Tk, physical capture, voice/OCR, models, cloud, live phone, role/Home isolation or real financial issuance/settlement."
+}

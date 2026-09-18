@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "schema_files": 8,
+  "definitions": 212,
+  "public_methods": 20,
+  "positive": 479,
+  "negative": 503,
+  "format_checks": [
+    "uuid",
+    "offset-aware date-time"
+  ],
+  "resolution": "local only",
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "jsonschema": "4.26.0",
+  "errors": []
+}

@@ -1,0 +1,82 @@
+{
+  "version": "0.12.16",
+  "metadata_url": "https://pypi.org/pypi/uv/json",
+  "files": [
+    {
+      "filename": "uv-0.12.16-py3-none-linux_armv6l.whl",
+      "sha256": "36493339f30a50ca59b4018d1c92ccb37f8f1cdfb94d7ddbd89695708c5df7f1"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-macosx_10_12_x86_64.whl",
+      "sha256": "3b07f6867309ae1957b99d0ab9b008e3cea6497e2e9aec4a5c9642ddfc1fc3c3"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-macosx_11_0_arm64.whl",
+      "sha256": "50ed2f31db45e620a10a9e9fc20d2a828a207db67b791e7b888395679e96bab4"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.musllinux_1_1_aarch64.whl",
+      "sha256": "99bdd4ffb8c98dc4d6a2a3155f4fe4c806a44d0cde1c525d155f1183f676499f"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_17_armv7l.manylinux2014_armv7l.musllinux_1_1_armv7l.whl",
+      "sha256": "27ddfad3069c44bac53d7fab90bf4be4d4483a1639da089250213de364aa16c0"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_17_armv7l.manylinux2014_armv7l.whl",
+      "sha256": "0e21e29999dae23cd85cb8cfa05897ed935561c96074661a9caaa9156387bc0c"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl",
+      "sha256": "c7f43cdea4415c84fad30a4a9124078c0024ba0c873aaf27dc0da4391e280235"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl",
+      "sha256": "2117d68188bdef642f5c1f997a46945c55ccfdec396ee475f8351db335d6812f"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_17_s390x.manylinux2014_s390x.whl",
+      "sha256": "770c06fde10ebf9d2c5343b2d850623bb319f797d99fefdeb29e4b41a699597d"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "c4570eeeef838ddc6957e1b28c5e88305bb492c83b000ed3b8ff3cf86a8ecf00"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_28_aarch64.whl",
+      "sha256": "6a9882db1acc22b486036e08586c816bae58198baa26111149be73684e9322f9"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_31_riscv64.musllinux_1_1_riscv64.whl",
+      "sha256": "836524e54eb3e92816da744f8a2eaee59b8e189411f6cf8774531b2aa56e064c"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-manylinux_2_31_riscv64.whl",
+      "sha256": "60565f399b64204a0dd16c8a1050b2d484b9dac77193b8c45ac51a05bfbbc223"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-musllinux_1_1_i686.whl",
+      "sha256": "464aa0485a310d1fc3df4007f7d5380cf00429c7cb54b5d9b737d0be9b7135b4"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-musllinux_1_1_x86_64.whl",
+      "sha256": "81b2f0fe4697d37802aea255a81eb2867e6bda2745568afca341b1e1d2c0cb39"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-win32.whl",
+      "sha256": "d98e70dc3bfdf1cff3a050b51e26a91c5852b2c7f0131f197dffb10f76ef62f5"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-win_amd64.whl",
+      "sha256": "f9157130acda5f2d9c51930535a1708740edabe3fa53b1c8f5a70c98f7144497"
+    },
+    {
+      "filename": "uv-0.12.16-py3-none-win_arm64.whl",
+      "sha256": "ccaa314ec6e81895b336ec9cee0e4c48cdb022b19eb409c3e1433a7d2bbc0d29"
+    },
+    {
+      "filename": "uv-0.12.16.tar.gz",
+      "sha256": "1f554b8d57596facbafca8f3a68c77242d4cb1fe4ec941867c801fceac155e8b"
+    }
+  ]
+}

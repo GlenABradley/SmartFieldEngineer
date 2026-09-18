@@ -1,0 +1,8 @@
+{
+  "business": "DEMO Field Office",
+  "recipient": "DEMO customer",
+  "terms": "Training only, prepared and not sent",
+  "tax_amount": "0",
+  "lines": [{"description": "DEMO installation labor", "quantity": "1", "unit_price": "100"}],
+  "asset_serial_refs": ["SW1"]
+}

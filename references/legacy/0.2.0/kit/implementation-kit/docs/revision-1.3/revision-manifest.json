@@ -1,0 +1,17 @@
+{
+  "classification": "floor",
+  "revision": "1.3",
+  "date": "2026-09-18",
+  "status": "meaning_patch_overlay_not_merged",
+  "base_documents": {
+    "output/canon.md": {
+      "sha256": "1b770d7cf22988f5259b90ef8c9aa50161d5f61df170cfd8e9a0991ce8f28ea2"
+    },
+    "implementation-kit/docs/Implementation-Canon.md": {
+      "sha256": "4ed4ec6ba312b84ed12a71cc19ca018a2095ee1d40fdcac64cbb5aaf7ed72ec3"
+    },
+    "implementation-kit/VALIDATION.md": {
+      "sha256": "3f5e0d23327559ff6d4eee31b44b9aea7d31d2a4e6bcb750cfdcf6774b5ef141"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+build/
+dist/*
+!dist/.gitkeep
+.env
+.env.*
+!.env.example
+owner-root/
+private-data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
