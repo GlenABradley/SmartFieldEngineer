@@ -1,0 +1,57 @@
+name: Feature request
+description: Propose a scoped product or developer-experience improvement.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Slice 1 is governed by a reviewed contract. Proposals that change its public methods, product boundary, or durability semantics require an explicit owner decision before implementation.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Proposal type
+      options:
+        - Existing roadmap capability
+        - Developer experience or tooling
+        - Documentation
+        - Contract or product-scope change
+        - Post-Slice-1 idea
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the user or engineering problem without prescribing a solution.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: What observable behavior would make this complete?
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Contract and boundary impact
+      description: Identify affected methods, data, Homes, persistence, platform behavior, and any new external dependency.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Acceptance evidence
+      description: Which real tests or qualification evidence should prove the outcome?
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Proposal checks
+      options:
+        - label: This proposal does not assume an unimplemented capability already exists.
+          required: true
+        - label: I have identified whether this changes the frozen Slice 1 contract.
+          required: true

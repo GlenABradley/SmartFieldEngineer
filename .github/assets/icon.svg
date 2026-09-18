@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Smart Field Engineer icon</title>
+  <desc id="desc">A circuit path forming a field marker around a central engineering bolt.</desc>
+  <defs>
+    <linearGradient id="bg" x1="32" y1="20" x2="224" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1831"/>
+      <stop offset="1" stop-color="#123F58"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="60" y1="52" x2="205" y2="205" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#36C5F0"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="54" fill="url(#bg)"/>
+  <path d="M128 42c-41.4 0-75 33.6-75 75 0 53.7 65.5 99 72.9 104a4 4 0 0 0 4.2 0c7.4-5 72.9-50.3 72.9-104 0-41.4-33.6-75-75-75Z" fill="none" stroke="url(#signal)" stroke-width="12"/>
+  <path d="M91 91h25l12-14 12 14h25v26l14 11-14 11v26h-25l-12 14-12-14H91v-26l-14-11 14-11V91Z" fill="#F8FAFC"/>
+  <circle cx="128" cy="128" r="25" fill="#0B1831"/>
+  <path d="M128 103v50M103 128h50" stroke="url(#signal)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="53" cy="117" r="7" fill="#F59E0B"/>
+  <circle cx="203" cy="117" r="7" fill="#F59E0B"/>
+</svg>
