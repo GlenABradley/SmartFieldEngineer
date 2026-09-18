@@ -4,7 +4,7 @@ import hashlib
 import json
 import uuid
 
-from packages.domain.errors import DomainError
+from packages.domain.errors import DomainError, StoreError
 
 
 def canonical(value):
@@ -32,7 +32,11 @@ def execute_command(con, identity, cmd, principal):
                 raise DomainError("OPERATION_ID_CONFLICT")
             con.rollback()
             return json.loads(prior["receipt_json"])
-        if cmd["command"] != "job.create" or cmd["payload"]["capture_refs"]:
+        if cmd["command"] != "job.create":
+            raise NotImplementedError("This command branch is not implemented")
+        if cmd["expected_revision"] != 0 or cmd["job_scope_revision"] is not None:
+            raise StoreError("Invalid internal job.create revision envelope")
+        if cmd["payload"]["capture_refs"]:
             raise NotImplementedError("This command branch is not implemented")
         now, job = datetime.now(timezone.utc).isoformat(), cmd["job_id"]
         existing = con.execute("SELECT 1 FROM jobs WHERE job_id=?", (job,)).fetchone()

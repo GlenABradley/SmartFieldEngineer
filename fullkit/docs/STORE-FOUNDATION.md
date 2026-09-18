@@ -27,7 +27,7 @@ Store directories are built before the index transaction publishes their identit
 
 Once index commit has been attempted, failure is potentially an acknowledgement failure. Created stores are preserved, never deleted merely because the caller did not receive success. A committed receipt can be replayed; an unpublished orphan requires review. Filesystem and index are not a single atomic transaction. Mac directory flushing and SQLite FULL are exercised; Windows directory durability/power-loss qualification is pending.
 
-The executor serializes store lifecycle and ordinary commands internally; the application queue owns selected-context authorization. Desktop intent recovery and QProcess orchestration remain unfinished. No live customer root was provisioned during this work; fixtures and the installed-wheel probe used disposable directories.
+Core frame parsing now runs on the caller thread. The Application executor serializes selected-context authorization; the StoreSession executor retains SQLite connection and lock affinity. HomeWorkspace retains its maintenance executor. Core and Application close admission before application cleanup is enqueued; accepted application work runs before cleanup. Desktop intent recovery and QProcess orchestration remain unfinished. No live customer root was provisioned during this work; fixtures and the installed-wheel probe used disposable directories.
 
 ## Evidence
 
@@ -39,7 +39,7 @@ Together **41 application foundation tests + 15 workbench + 8 inventory = 64 pas
 
 A development wheel was built, installed with a hash-verified locked subset of schema dependencies into a disposable fresh venv, and exercised with isolated Python from outside the source tree. It provisioned/opened two actual stores using installed migration resources and ran real select/create/list/operation receipt/replay through the codec. This verifies foundation/parser/first-command packaging only, not Qt/QProcess, installer or Windows runtime qualification. Evidence: reports/Environment-Validation.json, store-foundation-tests.log, Store-Foundation-Installed-Wheel.json and store-foundation-wheel-build.log (local generated reports).
 
-Next: real integration driver/QProcess transport, then serial vertical slice and the remaining command branches. No success stubs or acceptance skips were introduced.
+S04.1 F1/F3/F4 is implemented; stop here for Glen-mediated diff review. S05 real integration driver/QProcess transport remains a separate block. No success stubs or acceptance skips were introduced.
 
 ## Current raw application surface
 
@@ -54,3 +54,18 @@ Job-list pagination is generation-bound keyset over creation event sequence + jo
 Windows principal observation uses process-token SID APIs; on Mac the principal is explicitly posix_dev:uid. Windows execution/qualification remains pending. References: [OpenProcessToken](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocesstoken), [GetTokenInformation](https://learn.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-gettokeninformation), [ConvertSidToStringSidW](https://learn.microsoft.com/en-us/windows/win32/api/sddl/nf-sddl-convertsidtostringsidw).
 
 Owner-protected production diagnostics, complete public-method implementations, full recovery directory immutability, ordinary migration/upgrade corpus qualification, installer resources and desktop intent journal remain required before release.
+
+
+## S04.1 — context recovery and execution boundary hardening
+
+Implemented against application foundation `3c85b53` on a separate code branch based on main `c4bda07`; no CodeRabbit presentation commits are included.
+
+- F1 snapshots `self.store.readonly` before closing the previous store and supplies it when reopening after target acquisition fails. The original target error is retained, recovery stays read-only, generation advances, and cursors remain invalidated.
+- F3 removes only the Core executor. Application, StoreSession and HomeWorkspace executors remain. Core and Application set their closed flags before application shutdown/cleanup admission.
+- F4 checks the internal job.create revision envelope after replay/conflict and before mutable inspection. Invalid expected/scope revisions raise StoreError with no job, event, audit or operation rows. Nonempty capture_refs remains NotImplementedError; public floating revisions remain invalid params.
+
+Observed on Linux x86_64, Python 3.12.14, SQLite 3.53.1, pytest 9.1.1 and jsonschema 4.26.0 in a disposable test venv: baseline 41 application cases passed; three new cases initially failed at the named defects; after fixes 44 application + 15 workspace + 8 inventory cases passed. All 479 positive/503 negative specimens passed, with 212 definitions and exactly 20 methods. Baseline verifier checked 41 files with zero mismatches and two explicit Finder metadata exclusions; preserved root files were unchanged.
+
+The extracted Backup API test fixture explicitly closes setup connections before snapshotting ledger bytes, avoiding delayed connection cleanup/checkpoint effects in its assertions. It is still a fixture, not implemented restore. Original foundation evidence above remains historical.
+
+The existing environment checker exits 1: PySide6 is absent, so the Qt toolchain probe fails and environment readiness remains false. The unmodified two-Home suite exits 2 on missing packages.application.testing. Python 3.12/Linux checks do not establish the pinned Python 3.13 supported toolchain or Windows qualification. No wheel built; version remains 1.0.2.dev1. No S05, schema/contract, C1/C2 implementation or other application features added.
