@@ -9,4 +9,4 @@ Smart Field Engineer is under active development and does not yet have a support
 - For participation expectations, read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 - For vulnerabilities, follow [SECURITY.md](SECURITY.md) and report privately.
 
-Please do not upload customer ledgers, evidence, credentials, private paths, or recovery material. Planned behavior is not supported behavior; the roadmap summarizes that distinction. The authority register governs decisions; source code and attributed execution evidence establish implemented behavior. Read the S04.1 packet before starting implementation.
+Please do not upload customer ledgers, evidence, credentials, private paths, or recovery material. Planned behavior is not supported behavior; the roadmap summarizes that distinction. The authority register governs decisions; source code and attributed execution evidence establish implemented behavior. S04.1 is complete; read handoff/NEXT-CODE-BLOCK.md for the proposed S05 scope before its separately authorized execution.

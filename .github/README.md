@@ -23,7 +23,7 @@ Smart Field Engineer is an offline-first desktop operations system for a trusted
 - Atomic `job.create` facts, audit entries, durable receipts, idempotent replay, conflict detection, and bounded job pagination.
 - Real foundation and command-boundary tests, plus preserved contract, provenance, decision, and legacy-import source material.
 
-The immediate assignment is **S04.1 only: F1/F3/F4, one implementation commit, then stop**. Read the [frozen execution packet](../handoff/S04.1-PACKET.md). S05 then adds the real child/QProcess transport, test driver, and durable journal with process-loss and more-than-50-intent proof. See the [implementation roadmap](../fullkit/docs/IMPLEMENTATION-ROADMAP.md) for the complete sequence and exit criteria.
+**S04.1 is implemented, reviewed, and merged**: failed-switch recovery preserves read-only state, only the Core executor was removed, and invalid internal create revisions leave no rows. The [proposed S05 block](../handoff/NEXT-CODE-BLOCK.md) adds the real child/QProcess transport, test driver, and durable journal with process-loss and more-than-50-intent proof. It remains unimplemented; its later execution starts on a fresh branch from current main. See the [implementation roadmap](../fullkit/docs/IMPLEMENTATION-ROADMAP.md) for the complete sequence and exit criteria.
 
 ## Architecture
 
@@ -45,7 +45,7 @@ Glen’s current instructions → Spec 1.00 + H1–H5 + adopted Addendum 1.00.2 
 
 Scope-limited authority is the project’s **“Fourth Amendment”** principle: a review or documentation assignment confers authority within that assignment. It does not authorize changing contracts, milestone boundaries, or product scope. Useful reviewer input stays identifiable as input until adopted.
 
-Sol previously reported **41 application + 15 workspace + 8 inventory = 64 passing cases on macOS**, plus 479 positive/503 negative schema specimens. These are attributed foundation results, not proof of a finished application. The supplied two-Home integration suite still fails collection because the real test driver is absent; Windows execution remains unqualified.
+Current S04.1 evidence: Sol observed **44 application + 15 workspace + 8 inventory = 67 passing cases on Linux/Python 3.12.14**, plus 479 positive/503 negative schema specimens. Grok reviewed the actual a94e3a7 diff and passed it; he did not independently rerun tests. Earlier 41-case/macOS results remain historical. PySide6 is absent on the verification host, so the environment checker remains red; these results do not establish the supported Python 3.13/Qt toolchain or a finished application. The supplied two-Home integration suite still fails collection because the real test driver is absent; Windows execution remains unqualified.
 
 ## Start here
 

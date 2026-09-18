@@ -15,6 +15,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 from apps.edge.rpc import Core, MAX_FRAME
 from packages.application.homes import HomeWorkspace
+from packages.domain.errors import StoreError
 
 APP = Path(__file__).resolve().parents[2]
 JOB = "22222222-2222-4222-8222-222222222222"
@@ -289,11 +290,7 @@ def test_application_checks_context_without_transport_authority(owner):
         assert fact_counts(owner, home)["operations"] == 0
 
 
-def test_inactive_recovery_guard_precedes_old_receipt_replay(owner):
-    with Core(owner) as core:
-        home = core.workspace.list_homes()[0]
-        original = create(select(core, home))
-        old_receipt = call(core, "job.create", original)["result"]
+def recovery_fixture(owner, home):
     # A labeled recovery fixture uses a real Backup API copy. This is not evidence
     # of the still-unimplemented restore/activation operation.
     recovery_id = uid()
@@ -303,9 +300,21 @@ def test_inactive_recovery_guard_precedes_old_receipt_replay(owner):
     with sqlite3.connect(source.resolve().as_uri() + "?mode=ro", uri=True) as src, sqlite3.connect(directory / "ledger.sqlite") as target:
         src.backup(target)
         target.execute("UPDATE store_meta SET store_instance_id=?,active=0,recovery=1", (recovery_id,))
+    target.close()
+    src.close()
     with sqlite3.connect(owner / "private-home-index") as index:
         index.execute("INSERT INTO homes VALUES(?,?,?,?,?,?)",
                       (home["home_id"], recovery_id, "Recovery fixture", "recovery/" + recovery_id, 0, 1))
+    index.close()
+    return recovery_id, directory
+
+
+def test_inactive_recovery_guard_precedes_old_receipt_replay(owner):
+    with Core(owner) as core:
+        home = core.workspace.list_homes()[0]
+        original = create(select(core, home))
+        old_receipt = call(core, "job.create", original)["result"]
+    recovery_id, directory = recovery_fixture(owner, home)
     before = (directory / "ledger.sqlite").read_bytes()
     with Core(owner) as core:
         descriptor = next(h for h in core.workspace.list_homes() if h["store_instance_id"] == recovery_id)
@@ -355,3 +364,48 @@ def test_decimal_integer_and_sibling_command_fields_are_rejected(owner):
         params["cmd"]["command"] = "job.update"
         assert call(core, "job.create", params)["error"]["code"] == -32602
         assert fact_counts(owner, home)["operations"] == 0
+
+
+def test_failed_switch_preserves_readonly_recovery_and_invalidates_cursors(owner):
+    with Core(owner) as core:
+        a, b = core.workspace.list_homes()
+        ctx = select(core, a)
+        for title in ("one", "two"):
+            assert call(core, "job.create", create(ctx, job=uid(), title=title))["result"]["state"] == "confirmed"
+    recovery_id, directory = recovery_fixture(owner, a)
+    source = owner / ("home-" + a["home_id"]) / "ledger.sqlite"
+    before = {path: path.read_bytes() for path in (source, directory / "ledger.sqlite")}
+    counts = fact_counts(owner, a)
+    with Core(owner) as core:
+        recovery = next(h for h in core.workspace.list_homes() if h["store_instance_id"] == recovery_id)
+        old = select(core, recovery)
+        page = call(core, "job.list", {"context": old, "cursor": None, "limit": 1})["result"]
+        assert page["next_cursor"] is not None
+        deny(call(core, "job.create", create(old)), "RECOVERY_INACTIVE")
+        with core.workspace.open_store(b["home_id"], b["store_instance_id"]):
+            deny(call(core, "session.select_home", {key: b[key] for key in ("home_id", "store_instance_id")}), "HOME_WRITER_EXISTS")
+        fresh = core.context
+        assert fresh is not None
+        assert fresh["home_id"] == a["home_id"]
+        assert fresh["store_instance_id"] == recovery_id
+        assert fresh["session_generation"] > old["session_generation"]
+        assert core.application.store.readonly is True
+        jobs = call(core, "job.list", {"context": fresh, "cursor": None, "limit": 100})["result"]["items"]
+        assert [job["title"] for job in jobs] == ["one", "two"]
+        deny(call(core, "job.list", {"context": old, "cursor": None, "limit": 100}), "HOME_CONTEXT")
+        deny(call(core, "job.list", {"context": fresh, "cursor": page["next_cursor"], "limit": 100}), "HOME_CONTEXT")
+        deny(call(core, "job.create", create(fresh)), "RECOVERY_INACTIVE")
+    assert fact_counts(owner, a) == counts
+    for path, original in before.items():
+        assert path.read_bytes() == original
+
+
+@pytest.mark.parametrize("field", ["expected_revision", "job_scope_revision"])
+def test_internal_create_revision_envelope_rejected_without_rows(owner, field):
+    with Core(owner) as core:
+        home = core.workspace.list_homes()[0]
+        cmd = create(select(core, home))["cmd"]
+        cmd[field] = 1
+        with pytest.raises(StoreError, match="Invalid internal job.create revision envelope"):
+            core.application.store.submit_command(cmd, core.application.principal)
+        assert fact_counts(owner, home) == {"jobs": 0, "job_events": 0, "audit": 0, "operations": 0}

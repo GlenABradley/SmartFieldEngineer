@@ -1,12 +1,12 @@
 # Smart Field Engineer implementation roadmap
 
-Updated 2026-09-18 against application foundation `3c85b53`, frozen packet at `c4bda07`, and documentation-only CodeRabbit commit `4fe4045`. This is an engineering status map, not a release claim or a replacement for the governing contract.
+Updated 2026-09-18 against reviewed S04.1 `a94e3a7` (foundation `3c85b53`), merged to main in `fca57c1`, retaining CodeRabbit presentation `4fe4045` with corrected authority and sequence. This is an engineering status map, not a release claim or a replacement for the governing contract.
 
 ## Executive assessment
 
 Smart Field Engineer is a well-specified pre-release workbench with a credible persistence and command foundation. Its strongest assets are the unusually detailed offline/durability contract, strict Home isolation model, preserved decision provenance, real fault-oriented tests, and honest visible failures for missing behavior.
 
-The project is not yet a desktop application. The current implementation covers the first narrow vertical slice: provision two Homes, open and lock their stores, select a context, create/list jobs, and retrieve/replay durable receipts through the shared frame codec. The next work should deepen this boundary before broadening into UI features.
+The project is not yet a desktop application. The current implementation covers the first narrow vertical slice: provision two Homes, open and lock their stores, select a context, create/list jobs, and retrieve/replay durable receipts through the shared frame codec. S04.1 boundary hardening is complete. The next proposed work carries that boundary across a real process through S05; no second foundation pass or desktop screen build is scheduled here.
 
 ## Product and contract boundary
 
@@ -29,7 +29,7 @@ Maintenance provision/import/activation operations remain private application bo
 | `fullkit/apps/edge/` | Core codec, dispatch, principal, writer lock | Strict in-process frame handling exists; installed stdin/QProcess entry point does not. |
 | `fullkit/apps/desktop/` | PySide6 UI, transport, intent journal, preview | Reserved directory only. |
 | `fullkit/migrations/local/` | Forward-only local schema | Store metadata, migration receipts, audit, jobs, job events, and operations exist. |
-| `fullkit/tests/application/` | Real implementation tests | 41 application cases were reported passing by Sol on macOS; counts are historical execution evidence, not a fresh run here. |
+| `fullkit/tests/application/` | Real implementation tests | 44 application cases passed for S04.1 on Linux/Python 3.12.14; 41/macOS is historical foundation evidence. Grok reviewed the diff without rerunning tests. |
 | `fullkit/tests/contract/` | Working copies of reviewed contract tests | Inventory/schema checks can pass; end-to-end two-Home vectors await the real driver. |
 | `fullkit/contract/` | Preserved contract, schemas, specimens, and validation tools | Reviewed baseline; do not edit casually or treat it as application evidence. |
 | `references/` | Canons, historical reviews, and legacy 0.2.0 import source | Valuable provenance; not active implementation code. |
@@ -44,7 +44,7 @@ Maintenance provision/import/activation operations remain private application bo
 - Persists Home/store identity and denies mismatched store selection without mutating the ledger.
 - Uses one executor-owned SQLite connection per store, WAL journaling, synchronous FULL, foreign keys, and forward-only hashed migrations.
 - Holds an OS-backed writer lock for the session lifetime; POSIX is development-only and Windows uses handle/file identity checks.
-- Supports read-only inactive recovery inspection in the foundation, while denying mutation. F1 failed-switch restoration remains pending; Backup API fixtures do not establish implemented restore or complete recovery-directory immutability.
+- Supports read-only inactive recovery inspection in the foundation, while denying mutation. F1 failed-switch restoration now preserves the snapshotted read-only flag; Backup API fixtures do not establish implemented restore or complete recovery-directory immutability.
 
 ### RPC, context, and commands
 
@@ -64,7 +64,6 @@ Maintenance provision/import/activation operations remain private application bo
 
 | Priority | Gap | Why it matters |
 |---|---|---|
-| P0 | Apply the reviewed S04.1 boundary hardening packet | Read-only context restoration, executor ownership, and direct internal revision-envelope checks must be correct before transport increases concurrency. |
 | P0 | No installed core entry point or QProcess transport | The production boundary and supplied integration driver cannot run; current frame tests are in-process only. |
 | P0 | No durable desktop semantic-intent journal | A process loss between send, commit, response, and acknowledgement cannot yet be reconciled from the future UI. |
 | P0 | Most domain and command routes are unimplemented | Job updates, evidence, serial identity, office facts, holds, envelopes, backup, restore, and status still fail honestly. |
@@ -78,12 +77,12 @@ Maintenance provision/import/activation operations remain private application bo
 
 ## Delivery sequence — frozen S04.1 → S10
 
-This is a **derived status map**, not governing authority or permission to start a later block. Glen’s instructions and [adopted authority](../../decisions/AUTHORITY.md) govern. The [S04.1 execution packet](../../handoff/S04.1-PACKET.md) is the immediate bounded assignment; the [reviewed continuation sequence](../../handoff/GROK-CODE-BRAINSTORM-OPEN-WORK.md) supplies the subsequent milestone order. Older queue numbering and brainstorm implementation suggestions do not override the frozen packet or contract.
+This is a **derived status map**, not governing authority or permission to start a later block. Glen’s instructions and [adopted authority](../../decisions/AUTHORITY.md) govern. The [S04.1 execution packet](../../handoff/S04.1-PACKET.md) is completed and preserved; the [S05 handoff](../../handoff/NEXT-CODE-BLOCK.md) is the next proposed block; the [reviewed continuation sequence](../../handoff/GROK-CODE-BRAINSTORM-OPEN-WORK.md) supplies the subsequent milestone order. Older queue numbering and brainstorm implementation suggestions do not override the frozen packet or contract.
 
 | Block | Scope | Required exit evidence |
 |---|---|---|
-| **S04.1 — next, pending** | F1: preserve prior read-only flags on failed Home switch; F3: remove the Core executor, retain Application queue and StoreSession affinity, close admission before cleanup; F4: reject invalid internal create revision envelopes after replay/conflict and before mutation. | Existing 41 application cases plus focused F1/F4 cases pass; fresh generation and no revived cursors; invalid internal envelopes produce no facts or receipts. Preserve baseline and the integration collection failure. One implementation commit, then stop. |
-| **S05 — pending** | Real child entry, bounded streaming codec, asynchronous QProcess, source-only real test driver, durable write-before-send journal and process-loss reconciliation. | Real child PID/lifecycle; both transports agree; fragments/coalescing/oversize/EOF and stderr separation; journal failure sends nothing; pre-send/precommit/postcommit/pre-ack faults; **more than 50 pending intents** reconcile by individual receipt lookup with one mutation per intent. Unmodified integration tests collect and fail at absent behavior. |
+| **S04.1 — complete, merged** | F1: preserve prior read-only flags on failed Home switch; F3: remove the Core executor, retain Application queue and StoreSession affinity, close admission before cleanup; F4: reject invalid internal create revision envelopes after replay/conflict and before mutation. | Observed 44 application cases passed, including F1 and two F4 regressions; schema/baseline passed. Grok passed the diff via Glen. Integration still fails collection; Windows/Qt qualification remains outstanding. |
+| **S05 — next, proposed** | Real child entry, bounded streaming codec, asynchronous QProcess, source-only real test driver, durable write-before-send journal and process-loss reconciliation. | Real child PID/lifecycle; both transports agree; fragments/coalescing/oversize/EOF and stderr separation; journal failure sends nothing; pre-send/precommit/postcommit/pre-ack faults; **more than 50 pending intents** reconcile by individual receipt lookup with one mutation per intent. Unmodified integration tests collect and fail at absent behavior. |
 | **S06 — pending** | Serial observe/assign/verify/recall/dispute and correction history, using the existing job-create boundary. | Same-ID two-Home isolation, revision/replay/foreign-receipt checks and immutable bind history. Evidence-dependent paths wait for S07; document pin assertions may still fail until S08. No document stub or job.update scope/track work. |
 | **S07 — pending** | Evidence two-phase stage/publish, attach phase receipts, digest/size checks, orphan reconciliation, scoped read capabilities and photo observation. | Real stage/publish/fault/replay cases; foreign tokens do not consume peer state; expired/foreign read handles deny access; one evidence identity. Documents remain S08. |
 | **S08 — pending** | Immutable documents/pins/offline rendering; interruption and office time/cost/notes/items/stock/envelopes; job.update scope/track with adopted C1/C2. | Pins survive correction/dispute; escaped offline artifacts; no negative stock or duplicate economics; exact resource tags and half-open conflicts; STALE_RESERVATION; sourced owner resume and transactional append-only scope linkages resolving only the named hold. Implement required read projections alongside their features. |

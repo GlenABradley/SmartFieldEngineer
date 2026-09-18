@@ -1,7 +1,7 @@
 # Smart Field Engineer — local build home
 
 > [!IMPORTANT]
-> Current execution correction — 2026-09-18: start with [S04.1-PACKET.md](handoff/S04.1-PACKET.md), implement F1/F3/F4 only, then stop. The older queue below is historical where it differs: S05 includes the durable journal and process-loss/>50-intent proof; S06 serial; S07 evidence; S08 documents/interruption/office/job.update+C1/C2; S09 backup/restore/import; S10 minimal Qt shell; release qualification is separate. See the [derived roadmap](fullkit/docs/IMPLEMENTATION-ROADMAP.md) for status and exit evidence. C1/C2 are adopted but unimplemented.
+> Current status — 2026-09-18: S04.1 is implemented in a94e3a7, Grok-reviewed through Glen, and merged to main in fca57c1. [S05 transport/journal/test-driver plan](handoff/NEXT-CODE-BLOCK.md) is next, **not implemented or authorized for generation in this documentation session**. Start its later execution on a fresh branch from then-current main. The numbered queue below is historical where it differs: S05 includes journal/process-loss/>50-intent proof; S06 serial; S07 evidence; S08 documents/interruption/office/job.update+C1/C2; S09 backup/restore/import; S10 minimal Qt shell; release qualification is separate. C1/C2 remain adopted but unimplemented.
 
 
 Glen, this is the shared workbench for Full Kit Composed Slice 1. Start the next build session here. The existing folder is **SmartFieldEngineer - common/Build Artifact** (spaces around the hyphen); no duplicate folder was created under the compact spelling from the request.
