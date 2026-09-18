@@ -5,7 +5,7 @@ Read START-HERE.md, handoff/TO-GPT-SOL.md, decisions/AUTHORITY.md, and fullkit/c
 - Git root is this outer Build Artifact folder. Do not create nested Git repositories or commit local runtimes/venvs/data. Read GIT-MIRRORING.md for clean-clone setup.
 - This folder is the durable local build home requested by Glen. Work on the application in fullkit/. Do not build inside the ChatGPT project mirror or its read-only sources/.
 - Preserve root README.md, Validation.md and the release ZIP as supplied snapshots. Preserve references/ and the reviewed reference files inside fullkit/contract/reference/. Make revisions as new files or tracked application changes; never silently rewrite reviewed history.
-- Spec 1.00 + adopted H1–H5 govern. C1/C2 are explicit proposals, not adopted scope. Read the current decision register; do not infer adoption from a schema or a historical reviewer’s imperative wording.
+- Spec 1.00 + adopted H1–H5 govern. Artifact C1/C2 are adopted in decisions/Addendum-1.00.2.md; original package proposal labels are historical. Read the current decision register; do not infer adoption from a schema or a historical reviewer’s imperative wording.
 - Exactly twenty public RPC methods. Shipped Python/PySide6/QProcess/SQLite, separate Home blob stores, one trusted owner/two Homes. No hidden cloud/voice/connector/OCR/ASR/robot/payment implementation.
 - All ledger mutations, including maintenance, cross execute_command and the writer boundary. No GUI SQL writes, fake confirmations, success stubs, blanket test skips or mock acceptance drivers.
 - The application integration tests must fail honestly while implementation is missing. Contract validation and a Qt smoke test do not establish a running application or Windows qualification.

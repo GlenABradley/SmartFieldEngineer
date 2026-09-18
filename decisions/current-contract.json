@@ -1,0 +1,12 @@
+{
+  "effective_contract_version": "1.00.2",
+  "adopted_on": "2026-09-18",
+  "adopted_by": "Glen Bradley",
+  "source_quote": "i agree. adopt C1/C2. i approve.",
+  "clarification_document": "decisions/Addendum-1.00.2.md",
+  "adopted_contract_clarifications": [
+    "artifact 1.00.1 C1",
+    "artifact 1.00.1 C2"
+  ],
+  "pending_contract_proposals": []
+}

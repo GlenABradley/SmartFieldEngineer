@@ -1,6 +1,6 @@
 # Working on Smart Field Engineer
 
-Read AGENTS.md, START-HERE.md, decisions/AUTHORITY.md and fullkit/contract/README.md. Glen owns adopted direction; the 1.00.1 artifact’s C1/C2 remain proposals pending adjudication.
+Read AGENTS.md, START-HERE.md, decisions/AUTHORITY.md and fullkit/contract/README.md. Glen owns adopted direction; the artifact C1/C2 clarifications are adopted in decisions/Addendum-1.00.2.md; historical package labels do not supersede that decision.
 
 ## Work locations and tests
 
@@ -11,7 +11,7 @@ Implement the new application under `fullkit/`. Do not modify reviewed reference
 For the checks that can pass before implementation:
 
 ```sh
-fullkit/.venv/bin/python -m pytest tests/workspace fullkit/tests/contract/test_inventory.py -q
+fullkit/.venv/bin/python -m pytest tests/workspace fullkit/tests/contract/test_inventory.py fullkit/tests/application -q
 fullkit/.venv/bin/python scripts/check_environment.py
 ```
 

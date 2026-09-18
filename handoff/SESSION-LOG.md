@@ -28,3 +28,37 @@ Append date, agent, scope, files changed, actual commands/tests and results, unr
 - Fresh-checkout bootstrap and local results are in reports/Second-Pass-Validation.json. No remote writes or contract-scope adoption performed.
 
 Second-pass verification completed: 15 workspace + 8 inventory tests passed; 479 positive / 503 negative schema specimens passed; 42 substantive baseline hashes matched. Fresh temporary checkout/bootstrap succeeded with its own pinned runtime on this Mac; real Git index preserved. Root collection excludes archived tests and still exposes the missing application driver. Disposable installation removed after retaining local evidence. No commit or push.
+
+## 2026-09-18 — Sol takeover and current work plan
+
+- Glen switched this existing session from Astra to Sol and requested review of available chat context and the local repository, with updated tasks/goals.
+- Verified clean local HEAD `89379c9` (`mod 1`), following `5ab201f`. Glen’s mirroring and his supplied Grok pull/review supersede the preparation-time repository status; earlier “No commit or push” statements correctly describe Astra’s own actions and remain preserved.
+- Reviewed the available task conversation/pasted assignment, authority, handoff, adopted addendum, relevant spec/contract and implementation map/test interface. Complete originating history and a line-by-line archived-code audit are not claimed.
+- Ran `fullkit/.venv/bin/python scripts/check_environment.py`: exit 0; 42 substantive baseline entries matched; 15 workspace + 8 inventory tests passed; schema specimens 479 positive/503 negative passed; local toolchain probes passed. Real application integration still exits 2 on missing `packages.application.testing`; no app/Windows release claim.
+- Added handoff/SOL-WORK-PLAN.md with G0–G4 goals and S00–S11 task queue. Updated START-HERE.md, team/AGENT-REGISTER.md and continuation checkpoint to reflect active Sol ownership.
+- Recommended C1/C2 adoption as the smallest described corrections, pending Glen’s explicit adjudication. No scope change, revised estimate, implementation, external contact, commit or push.
+- Next implementation: real Home provisioning/store/writer and codec/context/atomic command-receipt boundary, then real driver/both transports and the same-ID two-Home serial slice. Independent foundation work does not wait for C1/C2.
+
+## 2026-09-18 — Glen adopts artifact C1/C2
+
+- Exact owner instruction: “i agree. adopt C1/C2. i approve.” Both artifact 1.00.1 clarification proposals are adopted.
+- Added decisions/Addendum-1.00.2.md and current-contract.json; effective contract is Spec 1.00 + H1–H5 + this clarification overlay. Original contract/release files remain unchanged.
+- Updated authority, current entry points/instructions, Sol task S02 and continuation checkpoint. Environment checker now reads current decision state instead of reporting the resolved proposals as pending.
+- No additional method, payload field, deployment service or estimate change. Implementation and Windows qualification remain incomplete. No external message, commit or push.
+
+## 2026-09-18 — Sol implements the Home/store foundation (S03)
+
+- Glen instructed proceeding with the next step after adopting C1/C2. Added real HomeWorkspace provisioning/private index, store identities/lifecycle, OS-held writer lock and SQLite connection/migration resources. Named internal maintenance execution is serialized; ordinary RPC command/context/fact-audit-receipt boundary remains S04.
+- Migration schema/history/receipt/version commit together. Provisioning retries preserve identities. Precommit failure cleans only its created directories; killed provisioning leaves unpublished stores for explicit review. After a commit attempt, potentially published stores are preserved; lost acknowledgement can reconcile by exact retry.
+- Added 18 meaningful persistence/failure/process-lock tests. No shipped fault hooks, mocks that prove themselves, success stubs or changes to supplied integration assertions. Windows code is present but unexecuted; POSIX locks are labeled development only. ACL/encryption/Windows alias and power-loss qualification remain pending.
+- Built development wheel 1.0.2.dev1 with packaged SQL. Installed into a fresh disposable venv and ran isolated Python outside the source tree: actual two-Home provision/open succeeded; temporary installation removed. Local packaging evidence is in reports/Store-Foundation-Installed-Wheel.json.
+- Environment checker now includes foundation tests and distinguishes missing integration driver from absence of all application source. Expected application integration import failure remains visible. Current baseline/source snapshots unchanged.
+- Updated entry/status documents, S03/G1 and foundation evidence. No customer root, commit, remote push or external contact. Next: S04 strict codec/context and atomic ordinary receipts, then real driver/QProcess and serial vertical slice.
+
+## 2026-09-18 — Sol completes the first raw command-receipt foundation
+
+- Extended the authorized next milestone through the actual codec/application boundary: Home list/select, job.create with empty capture_refs, paginated job.list and operation.get. Registry remains exactly twenty; unfinished routes/branches fail honestly with Internal error rather than synthetic success.
+- Added migration 002 for jobs/job events/audit/operations. Selected-context authorization is application-owned and storage rechecks Home/inactive rules. Canonical fingerprint, facts/event/audit/principal and terminal receipt share a transaction. Business-rule rejection STALE_JOB becomes a durable failed receipt; exact replay returns stored receipt; altered semantic intent conflicts. Inactive denial precedes historical replay.
+- Added 23 raw-command tests, making 41 real application foundation tests total. Cases include actual two-Home same-ID jobs, foreign/unknown receipt denial, restart/re-envelope, UUID equality, same-Home/failed switch generations, keyset high-water/expiry cursors, parallel retries, SQLite rollback/lost acknowledgement, real killed precommit process and inactive fixture guard. Existing supplied integration vectors/assertions remain unchanged and still cannot import the absent driver.
+- Rebuilt wheel and isolated installed probe: provision/select/create/list/receipt/replay passed outside source tree with hash-verified schema dependency subset. No live customer data or new RPC. QProcess/test driver, serials, evidence/office/backup/import, desktop and Windows qualification remain pending.
+- Next S05: real test-only driver and QProcess boundary using this codec/application; then S06 serial vertical slice. No external contact, commit or push.

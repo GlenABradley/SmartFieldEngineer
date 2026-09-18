@@ -2,14 +2,16 @@
 
 A local field office for an independent engineer: evidence capture, equipment identity, job records, immutable document pins, interrupted-work history, and recovery across two business Homes.
 
-**Current state: implementation contract and development environment ready; Slice 1 application not yet implemented.** The legacy 0.2.0 code is an import source and historical reference. Windows release qualification remains ahead.
+**Current state: Home/store foundation implemented; first raw context/job-create receipt path verified; full Slice 1 workflow incomplete.** The legacy 0.2.0 code is an import source and historical reference. Windows release qualification remains ahead.
 
 ## Start here
 
 - [Local workspace guide](../START-HERE.md)
-- [Current 1.00.1 build contract](../fullkit/contract/README.md)
-- [Adopted direction and pending C1/C2 proposals](../decisions/AUTHORITY.md)
+- [Preserved 1.00.1 build contract](../fullkit/contract/README.md)
+- [Adopted clarification addendum 1.00.2](../decisions/Addendum-1.00.2.md)
+- [Current adopted direction](../decisions/AUTHORITY.md)
 - [Astra’s handoff to GPT Sol](../handoff/TO-GPT-SOL.md)
+- [Foundation status and evidence](../fullkit/docs/STORE-FOUNDATION.md)
 - [Agent roles and allies](../team/AGENT-REGISTER.md)
 - [What was actually validated](../fullkit/contract/Validation.md)
 - [Second-pass review and corrections](../handoff/SECOND-PASS-REVIEW.md)

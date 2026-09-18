@@ -15,7 +15,7 @@ def application_state(repo,exit_code,output):
         r"ModuleNotFoundError: No module named ['\"](?:packages|packages\.application|packages\.application\.testing)['\"]",
         output))
     if exit_code==2 and missing_driver and not driver_present:
-        return 'not implemented; visible import failure'
+        return 'integration driver absent; visible import failure'
     return 'implementation tests failing; inspect log'
 
 def main():
@@ -43,22 +43,27 @@ def main():
             shutil.copy2(copy/'validation-schema.json',report/'schema-validation.json')
     run('workspace-tests',[sys.executable,'-m','pytest',str(ROOT/'tests/workspace'),'-q','-p','no:cacheprovider'])
     run('inventory-tests',[sys.executable,'-m','pytest','tests/contract/test_inventory.py','-q','-p','no:cacheprovider'])
+    run('store-foundation-tests',[sys.executable,'-m','pytest','tests/application','-q','-p','no:cacheprovider'])
     integration=run('application-integration',[sys.executable,'-m','pytest','tests/contract/test_two_home.py','-q','-p','no:cacheprovider'])
     run('local-toolchain',[sys.executable,str(ROOT/'scripts/probe_toolchain.py')],extra_env={'QT_QPA_PLATFORM':'offscreen'})
+    contract_state=json.loads((ROOT/'decisions/current-contract.json').read_text())
     source=json.loads((report/'Source-Copy-Register.json').read_text());changed=[]
     for name,h in source['existing_root_files_preserved'].items():
         p=ROOT/name
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=h:changed.append(name)
-    required=['artifact-integrity','schema-validation','workspace-tests','inventory-tests','local-toolchain']
+    required=['artifact-integrity','schema-validation','workspace-tests','inventory-tests','store-foundation-tests','local-toolchain']
     local_ok=all(results[n]['exit_code']==0 for n in required) and not changed
     status=application_state(repo,integration.returncode,integration.stdout)
     summary={'checked_at':datetime.now(timezone.utc).isoformat(),'workspace':str(ROOT),
              'python':platform.python_version(),'executable':sys.executable,'platform':platform.platform(),
              'sqlite':sqlite3.sqlite_version,'local_environment_ready':local_ok,'checks':results,
              'preexisting_files_changed':changed,'application_status':status,
+             'application_stage':'store/context/job-create receipt foundation implemented; remaining RPC, transport and integration driver incomplete',
              'application_release_qualified':False,'windows_qualified':False,
-             'pending_contract_proposals':['artifact 1.00.1 C1','artifact 1.00.1 C2']}
+             'effective_contract_version':contract_state['effective_contract_version'],
+             'adopted_contract_clarifications':contract_state['adopted_contract_clarifications'],
+             'pending_contract_proposals':contract_state['pending_contract_proposals']}
     (report/'Environment-Validation.json').write_text(json.dumps(summary,indent=2)+'\n')
     print(json.dumps(summary,indent=2))
-    return 0 if local_ok and status in {'not implemented; visible import failure','tests passed'} else 1
+    return 0 if local_ok and status in {'integration driver absent; visible import failure','tests passed'} else 1
 if __name__=='__main__':sys.exit(main())

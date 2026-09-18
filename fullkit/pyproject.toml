@@ -1,23 +1,26 @@
-# Copy to the NEW implementation repository; this artifact contains no application modules.
+# Working application package; reviewed template remains in contract/.
 [build-system]
 requires = ["setuptools==84.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "fullkit-composed"
-version = "1.0.1"
+version = "1.0.2.dev1"
 requires-python = ">=3.13,<3.14"
 dependencies = ["PySide6==6.11.2", "jsonschema[format]==4.26.0", "tzdata==2026.4"]
 description = "Full Kit Composed Slice 1 local desktop"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["packages*", "adapters*", "apps*"]
+include = ["packages*", "adapters*", "apps*", "migrations*"]
 exclude = ["tests*", "contract*"]
 
 [tool.setuptools.package-data]
+"migrations.local" = ["*.sql"]
 "apps.edge" = ["resources/schemas/*.json", "resources/migrations/*.sql"]
 "apps.desktop" = ["resources/templates/*.html", "resources/notices/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "--import-mode=importlib"

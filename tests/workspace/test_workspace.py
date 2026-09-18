@@ -11,7 +11,7 @@ check=load('check_environment');bootstrap=load('bootstrap')
 @pytest.mark.parametrize('missing',['packages','packages.application','packages.application.testing'])
 def test_absent_application_driver_is_reported_not_implemented(tmp_path,missing):
     output=f"ModuleNotFoundError: No module named '{missing}'"
-    assert check.application_state(tmp_path,2,output)=='not implemented; visible import failure'
+    assert check.application_state(tmp_path,2,output)=='integration driver absent; visible import failure'
 
 def test_partial_implementation_error_is_not_mislabeled(tmp_path):
     d=tmp_path/'packages/application';d.mkdir(parents=True);(d/'testing.py').write_text('')
