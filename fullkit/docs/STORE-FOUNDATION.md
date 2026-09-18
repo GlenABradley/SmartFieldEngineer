@@ -39,7 +39,7 @@ Together **41 application foundation tests + 15 workbench + 8 inventory = 64 pas
 
 A development wheel was built, installed with a hash-verified locked subset of schema dependencies into a disposable fresh venv, and exercised with isolated Python from outside the source tree. It provisioned/opened two actual stores using installed migration resources and ran real select/create/list/operation receipt/replay through the codec. This verifies foundation/parser/first-command packaging only, not Qt/QProcess, installer or Windows runtime qualification. Evidence: reports/Environment-Validation.json, store-foundation-tests.log, Store-Foundation-Installed-Wheel.json and store-foundation-wheel-build.log (local generated reports).
 
-Next: real integration driver/QProcess transport, then serial vertical slice and the remaining command branches. No success stubs or acceptance skips were introduced.
+Next: the frozen S04.1 F1/F3/F4 hardening packet, then stop. S05 follows with real integration driver/QProcess transport and durable intent recovery; see [the derived roadmap](IMPLEMENTATION-ROADMAP.md). The results above remain the original foundation evidence, not proof that S04.1 has run. No success stubs or acceptance skips were introduced.
 
 ## Current raw application surface
 

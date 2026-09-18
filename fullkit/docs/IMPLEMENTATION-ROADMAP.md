@@ -1,6 +1,6 @@
 # Smart Field Engineer implementation roadmap
 
-Updated 2026-09-18 against `main` at `c4bda075`. This is an engineering status map, not a release claim or a replacement for the governing contract.
+Updated 2026-09-18 against application foundation `3c85b53`, frozen packet at `c4bda07`, and documentation-only CodeRabbit commit `4fe4045`. This is an engineering status map, not a release claim or a replacement for the governing contract.
 
 ## Executive assessment
 
@@ -29,7 +29,7 @@ Maintenance provision/import/activation operations remain private application bo
 | `fullkit/apps/edge/` | Core codec, dispatch, principal, writer lock | Strict in-process frame handling exists; installed stdin/QProcess entry point does not. |
 | `fullkit/apps/desktop/` | PySide6 UI, transport, intent journal, preview | Reserved directory only. |
 | `fullkit/migrations/local/` | Forward-only local schema | Store metadata, migration receipts, audit, jobs, job events, and operations exist. |
-| `fullkit/tests/application/` | Real implementation tests | 35 test functions cover the current foundation and fault boundaries. |
+| `fullkit/tests/application/` | Real implementation tests | 41 application cases were reported passing by Sol on macOS; counts are historical execution evidence, not a fresh run here. |
 | `fullkit/tests/contract/` | Working copies of reviewed contract tests | Inventory/schema checks can pass; end-to-end two-Home vectors await the real driver. |
 | `fullkit/contract/` | Preserved contract, schemas, specimens, and validation tools | Reviewed baseline; do not edit casually or treat it as application evidence. |
 | `references/` | Canons, historical reviews, and legacy 0.2.0 import source | Valuable provenance; not active implementation code. |
@@ -44,7 +44,7 @@ Maintenance provision/import/activation operations remain private application bo
 - Persists Home/store identity and denies mismatched store selection without mutating the ledger.
 - Uses one executor-owned SQLite connection per store, WAL journaling, synchronous FULL, foreign keys, and forward-only hashed migrations.
 - Holds an OS-backed writer lock for the session lifetime; POSIX is development-only and Windows uses handle/file identity checks.
-- Supports read-only inactive recovery inspection in the foundation, while denying mutation.
+- Supports read-only inactive recovery inspection in the foundation, while denying mutation. F1 failed-switch restoration remains pending; Backup API fixtures do not establish implemented restore or complete recovery-directory immutability.
 
 ### RPC, context, and commands
 
@@ -71,68 +71,34 @@ Maintenance provision/import/activation operations remain private application bo
 | P1 | Blob staging/publication/read cache absent | Evidence integrity, immutable documents, and safe preview depend on it. |
 | P1 | Backup/restore/import absent | Core offline recovery and legacy migration promises are not demonstrable. |
 | P1 | Desktop UI absent | There is no usable application shell, transport lifecycle, or stale-context clearing behavior. |
-| P1 | Linux development is not reproducibly locked | This host cannot run the declared toolchain without a separately reviewed Linux wheel lock. |
+| P1 | Linux development is not reproducibly locked | No reviewed Linux wheel lock exists. Available host dependencies may support ad hoc checks; they do not establish the locked supported toolchain. |
 | P1 | Windows qualification outstanding | Locks, aliases, ACLs, encryption observation, installation, printing, and power-loss behavior remain unproven. |
 | P2 | No project distribution license | Repository visibility does not establish reuse or redistribution rights; the owner must select terms before a public release. |
 | P2 | No CI/release automation | A premature workflow would either omit required Windows evidence or advertise incomplete checks; add it once a supported runner matrix is explicit. |
 
-## Delivery sequence
+## Delivery sequence — frozen S04.1 → S10
 
-Each stage should leave unfinished routes visibly failing. Do not bypass an earlier boundary to make a later demo appear complete.
+This is a **derived status map**, not governing authority or permission to start a later block. Glen’s instructions and [adopted authority](../../decisions/AUTHORITY.md) govern. The [S04.1 execution packet](../../handoff/S04.1-PACKET.md) is the immediate bounded assignment; the [reviewed continuation sequence](../../handoff/GROK-CODE-BRAINSTORM-OPEN-WORK.md) supplies the subsequent milestone order. Older queue numbering and brainstorm implementation suggestions do not override the frozen packet or contract.
 
-### 1. Harden the current boundary (S04.1)
+| Block | Scope | Required exit evidence |
+|---|---|---|
+| **S04.1 — next, pending** | F1: preserve prior read-only flags on failed Home switch; F3: remove the Core executor, retain Application queue and StoreSession affinity, close admission before cleanup; F4: reject invalid internal create revision envelopes after replay/conflict and before mutation. | Existing 41 application cases plus focused F1/F4 cases pass; fresh generation and no revived cursors; invalid internal envelopes produce no facts or receipts. Preserve baseline and the integration collection failure. One implementation commit, then stop. |
+| **S05 — pending** | Real child entry, bounded streaming codec, asynchronous QProcess, source-only real test driver, durable write-before-send journal and process-loss reconciliation. | Real child PID/lifecycle; both transports agree; fragments/coalescing/oversize/EOF and stderr separation; journal failure sends nothing; pre-send/precommit/postcommit/pre-ack faults; **more than 50 pending intents** reconcile by individual receipt lookup with one mutation per intent. Unmodified integration tests collect and fail at absent behavior. |
+| **S06 — pending** | Serial observe/assign/verify/recall/dispute and correction history, using the existing job-create boundary. | Same-ID two-Home isolation, revision/replay/foreign-receipt checks and immutable bind history. Evidence-dependent paths wait for S07; document pin assertions may still fail until S08. No document stub or job.update scope/track work. |
+| **S07 — pending** | Evidence two-phase stage/publish, attach phase receipts, digest/size checks, orphan reconciliation, scoped read capabilities and photo observation. | Real stage/publish/fault/replay cases; foreign tokens do not consume peer state; expired/foreign read handles deny access; one evidence identity. Documents remain S08. |
+| **S08 — pending** | Immutable documents/pins/offline rendering; interruption and office time/cost/notes/items/stock/envelopes; job.update scope/track with adopted C1/C2. | Pins survive correction/dispute; escaped offline artifacts; no negative stock or duplicate economics; exact resource tags and half-open conflicts; STALE_RESERVATION; sourced owner resume and transactional append-only scope linkages resolving only the named hold. Implement required read projections alongside their features. |
+| **S09 — pending** | SQLite Backup API, verified archives, inactive restore/new store identity, maintenance activation and actual 0.2.0 import. | Uncheckpointed WAL survives standalone archive; peer Home unchanged; restored instance denies writes before activation; source inventory, stable IDs, full row dispositions, atomic import and exact replay. Actual customer-corpus demonstration awaits supplied ledger and referenced evidence. |
+| **S10 — pending** | Minimal Qt Today/Job/Capture shell with required Inbox/Preview/Exceptions/Home workflows over S05 transport and journal. | Every enabled control works; stale callbacks and Home switches clear scoped state; real preview/print, restart and load/resize checks; no GUI SQL writes. No design-system expansion. |
 
-Implement the accepted corrections in `handoff/S04.1-PACKET.md`: preserve read-only state when recovering a failed Home switch, remove the unnecessary codec executor layer, close dispatch races, and validate internal `job.create` revision envelopes.
+S04.1 does not implement transport, journal, test driver, serial, evidence, documents, C1/C2, backup/import or Qt. C1/C2 are **adopted semantics, not implemented behavior**. F4 raises an internal error without a durable receipt; it does not invent a SCHEMA domain code. The frozen packet resolves the earlier brainstorm’s alternatives.
 
-Exit evidence: all current application tests plus focused recovery/revision tests pass; contract baseline hashes remain unchanged.
+In S05, HOME_CONTEXT alone never authorizes a retry: first positively establish a fresh context for the original Home and working store, then reconcile that operation. Preserve the original UUID and semantic request for an authorized unknown receipt. Never rebind intents to a recovery instance or use the latest-50 status list as the journal.
 
-### 2. Add real process transport and test driver (S05)
+### Separate release qualification gate
 
-Build `apps.edge.__main__`, bounded streaming frame assembly, sanitized stderr diagnostics, asynchronous PySide6 `QProcess` transport, the minimum write-before-send intent journal, and `packages.application.testing.launch` over the real boundaries.
+S10 completion is not release qualification and does not create S11a/S11b milestones. Packaging, clean Windows install/reinstall, NTFS handle aliases, ACLs, observed encryption, offline printing, mandatory Spec §13 faults and the complete offline demonstration remain a separate gate. Record actual target hardware/runtime, source and artifact hashes, failures and untested conditions. Process kill does not establish power-loss durability. No stage can claim complete conformance from contract checks or a Qt smoke test.
 
-Exit evidence: in-process and QProcess runs produce identical first-command results and denials; fragmented/oversized frames resynchronize; restart/replay makes one mutation; the supplied integration tests collect and fail only at the next genuinely absent capability.
-
-### 3. Complete jobs and serial identity (S06)
-
-Implement job update/track/scope rules and serial observe → assign → verify → recall → correct/dispute history. Preserve same-ID isolation between Homes and immutable revision chains.
-
-Exit evidence: the two-Home serial vector passes over both real transports, including stale revisions, replay, foreign receipts, correction, dispute, and history.
-
-### 4. Evidence and immutable documents (S07)
-
-Add Home-local blob staging/publication, digest and size checks, attach phase receipts, orphan reconciliation, capability-scoped read cache, document rendering, and immutable serial pins.
-
-Exit evidence: fault tests cover stage/commit/publish/reconcile boundaries; foreign or expired previews reveal no path/data; offline document bytes are deterministic and pins do not change after serial correction.
-
-### 5. Office, scheduling, and interruption rules (S08)
-
-Add time/cost/notes, items and stock movements, envelopes with exact tags and half-open conflicts, sourced interruptions, and the adopted C1/C2 resume/scope semantics.
-
-Exit evidence: no negative stock, no duplicate economics, adjacency remains valid, stale envelopes return only `STALE_RESERVATION`, and resolving one hold cannot silently resolve another.
-
-### 6. Finish intent and crash recovery (S09)
-
-Complete semantic intent publication, startup reconciliation beyond the last 50 operations, context re-enveloping, and fault injection at before-send/before-commit/after-commit/before-ack points.
-
-Exit evidence: every fault converges to one durable outcome and one business mutation without treating unknown receipt state as failure.
-
-### 7. Backup, inactive restore, and legacy import (S10)
-
-Implement barriered SQLite Backup API archives, blob manifests, verified inactive restore/new store identity, explicit activation, read-only legacy inventory, reviewed import plans, stable ID mapping, and same-corpus replay.
-
-Exit evidence: uncheckpointed WAL data is present in archives; peer Home bytes stay unchanged; recovery is read-only; import is atomic/replay-safe and every source row has a disposition. Final customer-corpus proof remains blocked until real source data is supplied.
-
-### 8. Build the desktop shell (S11a)
-
-Implement the Home picker, Today, Inbox, Preview, Exceptions, and detail flows only after the raw boundaries work. Every enabled control must have a real handler; Home switches and stale responses must clear scoped state.
-
-Exit evidence: UI tests exercise resize, large photo/command sets, core restart, failed switch, stale callbacks, offline preview/print, and zero writable SQL in the GUI process.
-
-### 9. Package and qualify on Windows (S11b)
-
-Build the wheel/installer, preserve owner data across reinstall, establish local NTFS roots and ACLs, inspect SQLite/runtime hashes, qualify handle aliases and recovery, observe encryption without elevation, and run the complete offline release loop on supported hardware.
-
-Exit evidence: clean-install and reinstall receipts, full mandatory suite in both transports, standalone verified backup/restore, offline screenshots/logs with synthetic data, and a release `Validation.md` that records failures and untested conditions.
+Engineering remains **provisional 152–240 hours**, not a measured remaining-work estimate. Backup/import/file-identity work is inside the existing bands. No schedule, budget or scope change is adopted by this roadmap.
 
 ## Repository operations backlog
 

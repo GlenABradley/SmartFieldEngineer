@@ -23,21 +23,29 @@ Smart Field Engineer is an offline-first desktop operations system for a trusted
 - Atomic `job.create` facts, audit entries, durable receipts, idempotent replay, conflict detection, and bounded job pagination.
 - Real foundation and command-boundary tests, plus preserved contract, provenance, decision, and legacy-import source material.
 
-The next milestone is to harden the current execution boundary, then add the real process transport and integration-test driver. See the [implementation roadmap](../fullkit/docs/IMPLEMENTATION-ROADMAP.md) for the complete sequence and exit criteria.
+The immediate assignment is **S04.1 only: F1/F3/F4, one implementation commit, then stop**. Read the [frozen execution packet](../handoff/S04.1-PACKET.md). S05 then adds the real child/QProcess transport, test driver, and durable journal with process-loss and more-than-50-intent proof. See the [implementation roadmap](../fullkit/docs/IMPLEMENTATION-ROADMAP.md) for the complete sequence and exit criteria.
 
 ## Architecture
 
 ```mermaid
-flowchart LR
-    UI[PySide6 desktop<br><i>planned</i>] -->|QProcess + JSON-RPC| EDGE[Edge core<br><i>codec implemented</i>]
-    EDGE --> APP[Application boundary<br><i>context + job slice</i>]
-    APP --> DOMAIN[Domain rules<br><i>mostly planned</i>]
-    APP --> STORE[(Home-local SQLite<br><i>foundation implemented</i>)]
-    APP --> BLOBS[(Home-local blobs<br><i>directories only</i>)]
-    STORE -. isolated from .- PEER[(Peer Home)]
+flowchart TD
+    UI["PySide6 desktop — planned"] -->|QProcess + JSON-RPC — planned| EDGE["Edge core — codec implemented"]
+    EDGE --> APP["Application — context and job-create boundary"]
+    APP --> DOMAIN["Domain rules — mostly pending"]
+    APP --> STORE[("Selected Home SQLite — foundation implemented")]
+    APP --> BLOBS[("Selected Home blobs — directories only")]
+    STORE -. separate store .- PEER[("Peer Home SQLite")]
 ```
 
 Production is intentionally local and out-of-process: the desktop will own no writable SQL connection, and all ledger mutations will cross the same serialized command boundary.
+
+## Authority and implementation status
+
+Glen’s current instructions → Spec 1.00 + H1–H5 + adopted Addendum 1.00.2 → routine contract/schema detail. See the [authority register](../decisions/AUTHORITY.md). The roadmap reports status; it cannot adopt decisions, expand scope, or resequence work. C1/C2 are adopted and scheduled for S08, but remain unimplemented. Preserved package references calling them proposals are historical.
+
+Scope-limited authority is the project’s **“Fourth Amendment”** principle: a review or documentation assignment confers authority within that assignment. It does not authorize changing contracts, milestone boundaries, or product scope. Useful reviewer input stays identifiable as input until adopted.
+
+Sol previously reported **41 application + 15 workspace + 8 inventory = 64 passing cases on macOS**, plus 479 positive/503 negative schema specimens. These are attributed foundation results, not proof of a finished application. The supplied two-Home integration suite still fails collection because the real test driver is absent; Windows execution remains unqualified.
 
 ## Start here
 
@@ -47,7 +55,7 @@ Production is intentionally local and out-of-process: the desktop will own no wr
 | See current implementation status | [Implementation roadmap](../fullkit/docs/IMPLEMENTATION-ROADMAP.md) |
 | Work on the code | [CONTRIBUTING.md](../CONTRIBUTING.md) |
 | Review community expectations | [Code of conduct](../CODE_OF_CONDUCT.md) |
-| Read the governing contract | [Contract entry point](../fullkit/contract/README.md) |
+| Read the governing contract | [Authority and adopted overlay](../decisions/AUTHORITY.md), then [preserved contract entry](../fullkit/contract/README.md) |
 | Trace adopted decisions | [Authority register](../decisions/AUTHORITY.md) |
 | Review foundation evidence | [Store foundation](../fullkit/docs/STORE-FOUNDATION.md) |
 | Restore the toolchain | [Environment guide](../environment/README.md) |

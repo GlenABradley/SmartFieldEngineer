@@ -1,5 +1,9 @@
 # Sol — current goals and task register
 
+> [!IMPORTANT]
+> Current execution correction — 2026-09-18: start with [S04.1-PACKET.md](S04.1-PACKET.md), implement F1/F3/F4 only, then stop. The older queue below is historical where it differs: S05 includes the durable journal and process-loss/>50-intent proof; S06 serial; S07 evidence; S08 documents/interruption/office/job.update+C1/C2; S09 backup/restore/import; S10 minimal Qt shell; release qualification is separate. See the [derived roadmap](../fullkit/docs/IMPLEMENTATION-ROADMAP.md) for status and exit evidence. C1/C2 are adopted but unimplemented.
+
+
 Updated 2026-09-18 at Glen’s request after switching this existing session from Astra to Sol. This is the current execution plan; Astra’s handoff and the reviewed contract remain preserved. No new agent task or external message was created.
 
 ## Context accepted

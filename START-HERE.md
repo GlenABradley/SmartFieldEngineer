@@ -1,5 +1,9 @@
 # Smart Field Engineer — local build home
 
+> [!IMPORTANT]
+> Current execution correction — 2026-09-18: start with [S04.1-PACKET.md](handoff/S04.1-PACKET.md), implement F1/F3/F4 only, then stop. The older queue below is historical where it differs: S05 includes the durable journal and process-loss/>50-intent proof; S06 serial; S07 evidence; S08 documents/interruption/office/job.update+C1/C2; S09 backup/restore/import; S10 minimal Qt shell; release qualification is separate. See the [derived roadmap](fullkit/docs/IMPLEMENTATION-ROADMAP.md) for status and exit evidence. C1/C2 are adopted but unimplemented.
+
+
 Glen, this is the shared workbench for Full Kit Composed Slice 1. Start the next build session here. The existing folder is **SmartFieldEngineer - common/Build Artifact** (spaces around the hyphen); no duplicate folder was created under the compact spelling from the request.
 
 **Current lead: GPT Sol.** Read [Sol’s current goals and task register](handoff/SOL-WORK-PLAN.md). Read [Astra’s handoff](handoff/TO-GPT-SOL.md), [agent roles](team/AGENT-REGISTER.md), then the [current implementation contract](fullkit/contract/README.md). The Home/store foundation is implemented; the first raw context/job-create receipt path works; full transport/desktop workflow remains incomplete. See [foundation evidence](fullkit/docs/STORE-FOUNDATION.md). This workspace gives the next agent the files, toolchain, asserting tests and decisions needed to start honestly.

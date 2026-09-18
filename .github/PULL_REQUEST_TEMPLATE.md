@@ -20,3 +20,4 @@
 - [ ] I recorded commands actually run, failures, platform limits, and remaining qualification.
 - [ ] I updated `handoff/SESSION-LOG.md` when application behavior or implementation status changed.
 - [ ] I reviewed the final diff and called out any contract or owner decision required.
+- [ ] Documentation reflects the frozen S04.1–S10 sequence, distinguishes adopted decisions from implementation, and does not promote reviewer input or a roadmap into authority.

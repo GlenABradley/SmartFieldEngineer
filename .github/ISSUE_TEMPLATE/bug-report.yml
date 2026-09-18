@@ -73,7 +73,7 @@ body:
     attributes:
       label: Reporter checks
       options:
-        - label: I confirmed this behavior is described as implemented, not merely listed on the roadmap.
+        - label: I identified whether this concerns implemented behavior, incorrect documentation, or a planned capability.
           required: true
         - label: I removed customer data, secrets, credentials, and private paths from this report.
           required: true
