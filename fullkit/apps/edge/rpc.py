@@ -1,5 +1,4 @@
 """Bounded frame codec with real application dispatch; unfinished routes fail."""
-from concurrent.futures import ThreadPoolExecutor
 from importlib.resources import files
 import json
 import uuid
@@ -52,7 +51,6 @@ class Core:
         self._validators = {name: base.evolve(schema={"$ref": "#/$defs/" + contract["request"]})
                             for name, contract in self.methods.items()}
         self.application = Application(owner_root, principal=current_principal())
-        self._executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="fullkit-core")
         self._closed = False
 
     @property
@@ -66,7 +64,7 @@ class Core:
     def raw_frame(self, frame):
         if self._closed:
             raise StoreError("Core is closed")
-        return self._executor.submit(self._frame, frame).result()
+        return self._frame(frame)
 
     def _frame(self, frame):
         request_id = None
@@ -102,12 +100,10 @@ class Core:
         return (json.dumps(response, ensure_ascii=False, allow_nan=False, separators=(",", ":")) + "\n").encode("utf-8")
 
     def close(self):
-        if not self._closed:
-            try:
-                self._executor.submit(self.application.close).result()
-            finally:
-                self._executor.shutdown(wait=True)
-                self._closed = True
+        if self._closed:
+            return
+        self._closed = True
+        self.application.close()
 
     def __enter__(self):
         return self

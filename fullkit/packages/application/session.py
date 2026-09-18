@@ -52,6 +52,7 @@ class Application:
         if descriptor is None:
             raise DomainError("HOME_CONTEXT")
         previous = self.context
+        previous_readonly = self.store.readonly if self.store else None
         if self.store:
             self.store.close()
         self.store = self.context = None
@@ -61,7 +62,8 @@ class Application:
         except Exception:
             if previous:
                 try:
-                    self.store = self.workspace.open_store(previous["home_id"], previous["store_instance_id"])
+                    self.store = self.workspace.open_store(previous["home_id"], previous["store_instance_id"],
+                                                           readonly=previous_readonly)
                     self.generation += 1
                     self.context = dict(previous, session_generation=self.generation)
                 except Exception:
@@ -91,14 +93,15 @@ class Application:
         return {"items": items, "next_cursor": next_cursor}
 
     def close(self):
-        if not self._closed:
-            def cleanup():
-                if self.store:
-                    self.store.close()
-                    self.store = self.context = None
-                self.workspace.close()
-            try:
-                self._executor.submit(cleanup).result()
-            finally:
-                self._executor.shutdown(wait=True)
-                self._closed = True
+        if self._closed:
+            return
+        self._closed = True
+        def cleanup():
+            if self.store:
+                self.store.close()
+                self.store = self.context = None
+            self.workspace.close()
+        try:
+            self._executor.submit(cleanup).result()
+        finally:
+            self._executor.shutdown(wait=True)
